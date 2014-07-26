@@ -27,4 +27,18 @@ class BackCountryTest < Minitest::Test
     assert html.css('section').text.include?('Backcountry Deli')
     assert html.css('div.clearfix').text.include?('Old Town')
   end
+
+  def test_social_love
+    get '/social_love'
+    html = Nokogiri::HTML(last_response.body)
+
+    assert last_response.ok?
+    assert_equal "Social Love - Backcountry Delicatessen", html.css('title').text
+    source = "https://twitter.com/BCDdenver"
+    assert html.css('div.social-stream-206')
+  end
+
+  def test_franchise_info
+    get 
+  end
 end
