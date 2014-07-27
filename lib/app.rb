@@ -39,24 +39,24 @@ class BackCountry < Sinatra::Base
     erb :admin_contact_us
   end
 
-  get '/menu/hot_breakfast_sandwiches' do
-    erb :menu_hot_breakfast_sandwiches
-  end
-
   get '/menu/specialty_sandwiches' do
     erb :menu_specialty_sandwiches
+  end
+
+  get '/menu/hot_breakfast_sandwiches' do
+    erb :menu_hot_breakfast_sandwiches
   end
 
   get '/menu/build_your_own_sandwiches' do
     erb :menu_build_your_own_sandwich
   end
 
-  get '/menu/other_food' do
-    erb :menu_other_food
+  get '/menu/catering' do
+    erb :menu_catering
   end
 
-  get 'menu/catering' do
-    erb :menu_catering
+  get '/menu/other_food' do
+    erb :menu_other_food
   end
 
   get '/admin/menu/:menu' do |type|
