@@ -52,14 +52,14 @@ class BackCountryTest < Minitest::Test
   end
 
   def test_menu_hot_breakfast_sandwiches
-    get '/menu/hot_breakfast_sandwiches'
+    get '/hot_breakfast_sandwiches'
 
     assert last_response.ok?
     assert html.css('body').text.include?("Egg, Sausage and Cheddar")
   end
 
   def test_menu_specialty_sandwiches
-    get '/menu/specialty_sandwiches'
+    get '/specialty_sandwiches'
 
     assert last_response.ok?
     # assert html.css('body').text.include?("Egg, Sausage and Cheddar")

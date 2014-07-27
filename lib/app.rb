@@ -39,48 +39,71 @@ class BackCountry < Sinatra::Base
     erb :admin_contact_us
   end
 
-  get '/menu/specialty_sandwiches' do
+  get '/specialty_sandwiches' do
     erb :menu_specialty_sandwiches
   end
 
-  get '/menu/hot_breakfast_sandwiches' do
+  get '/hot_breakfast_sandwiches' do
     erb :menu_hot_breakfast_sandwiches
   end
 
-  get '/menu/build_your_own_sandwiches' do
+  get '/build_your_own_sandwiches' do
     erb :menu_build_your_own_sandwich
   end
 
-  get '/menu/catering' do
+  get '/catering' do
     erb :menu_catering
   end
 
-  get '/menu/other_food' do
+  get '/other_food' do
     erb :menu_other_food
   end
 
   get '/admin/menu/:menu' do |type|
-    menu_type = MenuStore.get_menu(type)
-    erb :admin_menu, locals: {menu_type: menu_type}
+    # menu_type = MenuStore.get_menu(type)
+    erb :admin_menu#, locals: {menu_type: menu_type}
   end
 
-  get '/locations/:location' do |location|
-    full_location = LocationStore.get_location(location)
-    erb :location, locals: {location: full_location}
+  get '/denver' do
+    erb :location_denver
+  end
+
+  get '/fort_collins' do
+    erb :location_fort_collins
+  end
+
+  get '/jackson_hole' do
+    erb :location_jackson_hole
+  end
+
+  get '/steamboat_springs' do
+    erb :location_steamboat_springs
   end
 
   get '/admin/locations/:location' do |location|
-    full_location = LocationStore.get_location(location)
-    erb :admin_location, locals: {location: full_location}
+    # full_location = LocationStore.get_location(location)
+    erb :admin_location#, locals: {location: full_location}
   end
 
-  get '/order_online/:location/' do |location|
-    order_location = LocationStore.get_location(location)
-    erb :order_online, locals: {location: order_location}
+  get '/order_online_denver' do
+    erb :order_online_denver
+  end
+
+  get '/order_online_fort_collins' do
+    erb :order_online_fort_collins
+  end
+
+  get '/order_online_jackson_hole' do
+    erb :order_online_jackson_hole
+  end
+
+  get '/order_online_steamboat_springs' do
+    erb :order_online_steamboat_springs
   end
 
   get '/admin/order_online/:location/' do |location|
-    order_location = LocationStore.get_location(location)
-    erb :admin_order_online, locals: {location: order_location}
+    # order_location = LocationStore.get_location(location)
+    erb :admin_order_online#, locals: {location: order_location}
   end
+
 end
