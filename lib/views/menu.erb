@@ -1,175 +1,62 @@
-### okay so for menu, believe it or not the documents are nearly identitcal
-## they all have a left and a right food menu(same for all could definitely pull this into a partial),
-##in the left-menu there are three food columns
-## then within each food column there are a number of food title areas with
-##a food title span(in most these are stong, build your own is a bit different in a few senses but not as many as you'd expect),
-##a toasted span, a price span, and a description
-
-## maybe we could do a partial for all but the contents of the left menu column?
+<!-- We could do something like this...  not sure what to do about columns -->
 <!doctype html>
 
-<!--[if lt IE 7]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js"><!--<![endif]-->
+<!doctype html>
+
+  <!--[if lt IE 7]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if (IE 7)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
+  <!--[if (IE 8)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9"><![endif]-->
+  <!--[if gt IE 8]><!--> <html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js"><!--<![endif]-->
 
   <head>
     <%= erb :head %>
 
-    <title><%=menu.type%> - Backcountry Delicatessen</title>
+    <title>Specialty Sandwiches - Backcountry Delicatessen</title>
 
   </head>
-  <body class="page <%=menu.page_id%> page-child parent-pageid-9 page-template page-template-page-menu-php">
+  <body class="page page-id-9 page-parent page-template-default">
 
     <div id="container">
 
-      <% erb :header %>
+      <%= erb :header %>
 
       <div id="content">
         <div id="foodmenu_wrapper">
           <div class="foodmenu-left">
-            <h1><%=menu.type%></h1>
-            <div class="foodcol-1">
+          <h1><%= menu.type %></h1>
+          <!-- print each menu item for that menu type -->
+          <%menu.type.each do |item| %>
+             <div class="foodcol-1">
               <p>
-                <span class="food-type"><%= menu.food_type%></span>
+                <span class="food-type"><%= item.type%><br /></span>
               </p>
               <div class="food-title-area">
                 <p>
-                  <span class="food-type"><%= menu.food_title</span>
-                  <span class="toasted"><%= menu_item.toasted?%></span>
-                  <span class="food-price"><%= menu_item.price%></span><br />
-                  <%= menu_item.description %>
+                  <strong><span class="food-title"><%= item.title%></span></strong>
+                  <span class="toasted"><%= item.toasted?%>
+                  </span>
+                  <span class="food-price"><%= item.food_price%>></span><br />
+                  <%item.description%>
                 </p>
-              </div><!-- food-title-area -->
-              <div class="food-title-area">
-                <p>
-                  <span class="food-type">Meat: (Choose one)</span><span class="toasted"></span>
-                  <span class="food-price"></span><br />
-                  Roasted Turkey<br />
-                  Roast Beef<br />
-                  Smoked Ham<br />
-                  Corned Beef<br />
-                  Pulled Pork<br />
-                  Sliced Chicken Breast<br />
-                  Prosciutto<br />
-                  Genoa Salami<br />
-                  Sopressata<br />
-                  Mortadella<br />
-                  Capocollo<br />
-                  German Bologna<br />
-                  Braunschweiger<br />
-                  Tuna Salad<br />
-                  Curry Chicken Salad<br />
-                  Smoked Salmon | + 1.00<br />
-                  Pastrami | + 1.00<br />
-                  Bacon | + 1.00<br />
-                  <strong>Extra meat | + 2.50</strong>
-                </div>
-              </div><!-- food-title-area -->
-
-            <div class="foodcol-2">
-              <span class="food-type"></span></p>
-              <div class="food-title-area">
-                <p>
-                  <span class="food-type">Cheese: (Choose one)</span>
-                  <span class="toasted"></span><span class="food-price"></span><br />
-                  Swiss<br />
-                  Provolone<br />
-                  Cheddar<br />
-                  Muenster<br />
-                  French Brie<br />
-                  Smoked Gouda<br />
-                  Fontina<br />
-                  Chevre<br />
-                  Fresh Mozzarella<br />
-                  Asiago<br />
-                  Pepper Jack<br />
-                  Crumbled Blue<br />
-                  Feta<br />
-                  Dill Havarti<br />
-                  Jarlsburg<br />
-                  American<br />
-                  Cream Cheese<br />
-                  <strong>Extra cheese | + 1.00</strong>
-                </div>
-              </div> <!-- food-title-area -->
-            <div class="foodcol-3">
-              <span class="food-type"></span></p>
-                <div class="food-title-area">
-                  <p>
-                    <span class="food-type">Veggies: (All you want)</span>
-                    <span class="toasted"></span><span class="food-price"></span><br />
-                    Romaine Lettuce<br />
-                    Field Greens<br />
-                    Tomato<br />
-                    Red Onion<br />
-                    Cucumber<br />
-                    Carrot<br />
-                    Sprouts<br />
-                    Pickles<br />
-                    Pepperoncini<br />
-                    Kalamata Olives<br />
-                    Giardiniera<br />
-                    Coleslaw<br />
-                    Hot Cherry Peppers<br />
-                    Avocado | + 1.00<br />
-                    Artichoke Hearts | + 1.00<br />
-                    Grilled Eggplant | + 1.00<br />
-                    Roasted Red Peppers | + .50<br />
-                    Oven Roasted Tomatoes | + .50
-                  </div>
-                <div class="food-title-area">
-                  <p>
-                    <span class="food-type">Spreads:</span>
-                    <span class="toasted"></span><span class="food-price"></span><br />
-                    Mayo<br />
-                    Chipotle Mayo<br />
-                    Horseradish Mayo<br />
-                    Garlic Mayo<br />
-                    Pesto Mayo<br />
-                    Dijon Mustard<br />
-                    Deli Brown Mustard<br />
-                    Honey Dijon Mustard<br />
-                    Yellow Mustard<br />
-                    House Caesar Dressing<br />
-                    House Russian Dressing<br />
-                    House Vinaigrette<br />
-                    House Balsamic Vinaigrette<br />
-                    House Buttermilk Ranch<br />
-                    Basil Pesto | + .50<br />
-                    Cranberry Chutney | + .50
-                  </div>
-                </div> <!-- food-title-area -->
-              <div class="clearfix">
-            </div>
+              </div>
+            <%end%>
+            <div class="clearfix"></div>
           </div> <!-- foodmenu_left -->
 
-          <div class="foodmenu-right">
-            <h1>Menu</h1>
-            <div class="foodmenu-menu">
-              <div class="menu-menu-container">
-                <ul id="menu-menu" class="menu">
-                  <li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="http://backcountry-deli.com/menu/hot-breakfast-sandwiches/" >Hot Breakfast Sandwiches</a></li>
-                  <li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-page-parent menu-item-57"><a href="http://backcountry-deli.com/menu/" >Specialty Sandwiches</a></li>
-                  <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-49 current_page_item menu-item-59"><a href="http://backcountry-deli.com/menu/build-your-own/" >Build Your Own Sandwich</a></li>
-                  <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="http://backcountry-deli.com/menu/salads-soups-sides-drinks/" >Salads, Soups, Sides, Drinks</a></li>
-                  <li id="menu-item-301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301"><a href="http://backcountry-deli.com/menu/catering-menu/" >Catering Menu</a></li>
-                  <li id="menu-item-562" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-562"><a target="_blank" href="http://backcountry-deli.com/wp-content/uploads/2013/02/breakfast-lunch-menu.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://backcountry-deli.com/wp-content/uploads/2013/02/breakfast-lunch-menu.pdf']);">Main Menu (PDF)</a></li>
-                  <li id="menu-item-563" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-563"><a target="_blank" href="http://backcountry-deli.com/wp-content/uploads/2013/02/catering-menu.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://backcountry-deli.com/wp-content/uploads/2013/02/catering-menu.pdf']);">Catering Menu (PDF)</a></li>
-                </ul>
-              </div>
-            </div> <!-- foodmenu-menu -->
-          </div> <!-- foodmen-right -->
+          <%= erb :menu_right %>
+
           <div class="clearfix"></div>
+
         </div> <!-- foodmenu-wrapper -->
       </div> <!-- end #content -->
 
-      <% erb :footer %>
+      <%= erb :footer %>
 
     </div> <!-- end #container -->
 
     <!-- all js scripts are loaded in library/bones.php -->
     <%= erb :script %>
-    <!--wp_footer-->
+<!--wp_footer-->
   </body>
+
 </html> <!-- end page. what a ride! -->
