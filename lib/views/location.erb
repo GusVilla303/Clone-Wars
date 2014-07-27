@@ -1,0 +1,105 @@
+## this would be the ideal location page, the tweet stuff I don't really know about how to do but i filled in what i could figure out
+<!doctype html>
+
+<!--[if lt IE 7]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js"><!--<![endif]-->
+
+  <head>
+    <%= erb :head %>
+
+    <title><%= location.name%> - Backcountry Delicatessen</title>
+    <!-- or -->
+    <!-- <title><%= location.city%>, <%= location.state%> - Backcountry Delicatessen</title> -->
+
+  </head>
+
+  ##the body line might need to stay? there is a class name of page-id-(number) that is unique for each location page, but that's it
+  <body class="page <%location.page_id%> page-child parent-pageid-10 page-template page-template-page-location-php">
+
+    <div id="container">
+
+      <%= erb :header %>
+
+      <div id="content">
+        <div id="image_viewport">
+          <div id="image_container">
+            ## the source for these images are all different
+            <img width="2500" height="313" src= "<%= location.banner%>" class="attachment-full" alt="Denver_location-banner" />			</div>
+        </div> <!-- the_slideshow -->
+
+        <div id="location_content_container">
+          <div id="location_content" class="clearfix">
+            <div class="main-content">
+              <h1><%= location.name%></h1>
+              <!-- or -->
+              <!-- <h1><%= location.city%>, <%= location.state%></h1> -->
+              <p>
+                <strong><%= location.hours%> | <%= location.phone-number%><br /></strong>
+              </p>
+              <p><%= location.description%></p>
+              <p>
+                <strong><%= location.city%> community involvement<br /></strong>
+                <%= location.involvement_description%>
+              </p>
+              <p>
+                <em><%location.address%></em>
+              </p>
+              <p>
+                <iframe src="<%= location.map%>" height="350" width="850" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><br />
+                <small>View <a style="color: #0000ff; text-align: left;" href="<%= location.map%>" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://maps.google.com']);">Backcountry Deli &#8211; <%= location.city%></a> in a larger map</small>
+              </p>
+
+
+              <div class="main-bottom-content">
+                <div class="map"></div> <!-- map -->
+              </div> <!-- main-bottom-content -->
+
+            </div> <!-- main-content -->
+
+            <div class="main-sidebar">
+              <div id="specials">
+                <div id="specials_copy">
+                  <!-- temp fix to link to location twitter pages .by Jaime 	-->
+                  <ul class="twitterfeed">
+                    <!-- twitter daily specials functionality only denver has this, we would have to have things like location.twitter page to get this to work -->
+                    <li class="tweet">
+                      <p>Today's
+                        <a href="http://twitter.com/search?q=%23dailyspecial" rel="external nofollow">#dailyspecial</a> is the <%= location.daily_special %>
+                      </p>
+                      <!--this is the favorite, reweet, and reply functionality-->
+                      <span class="intent">
+                        <a href="http://twitter.com/intent/retweet?related=BCDdenver&amp;tweet_id=4.9198052004609E+17" rel="nofollow">
+                          <img src="http://backcountry-deli.com/wp-content/plugins/wp-twitter-feed-pro/images/retweet.png" height="16" width="16" alt="Retweet">
+                        </a>
+                        <a href="http://twitter.com/intent/tweet?related=BCDdenver&amp;in_reply_to=4.9198052004609E+17" rel="nofollow">
+                          <img src="http://backcountry-deli.com/wp-content/plugins/wp-twitter-feed-pro/images/reply.png" height="16" width="16" alt="Reply"></a>
+                        <a href="http://twitter.com/intent/favorite?related=BCDdenver&amp;tweet_id=4.9198052004609E+17" rel="nofollow">
+                          <img src="http://backcountry-deli.com/wp-content/plugins/wp-twitter-feed-pro/images/favorite.png" height="16" width="16" alt="Favorite"></a>
+                      </span>
+                      <!--this is the favorite, reweet, and reply functionality-->
+                      <span class="timeline"><%= location.time_since_last_tweet%><br />
+                      </span>
+                    </li>
+                    <!-- twitter daily specials functionality only denver has this -->
+                  </ul>
+                  <!-- temp fix to link to location twitter pages .by chris -->
+
+                  <div style="margin-top:15px;">To learn more about our delicious specials call <%= location.phone_number %></div>
+                  <!-- hidden by Jaime <a href="https://twitter.com/BCDdenver" target="_blank">Check them out on Twitter</a>-->
+                </div> <!-- specials_copy -->
+              </div> <!-- specials -->
+            </div> <!-- main-sidebar -->
+          </div> <!-- location_content -->
+        </div> <!-- location_content_container -->
+      </div> <!-- end #content -->
+
+      <%= erb :footer %>
+
+    </div> <!-- end #container -->
+    <!-- all js scripts are loaded in library/bones.php -->
+    <%= erb :script %>
+    <!--wp_footer-->
+  </body>
+</html>
