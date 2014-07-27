@@ -8,9 +8,12 @@ class BackCountryTest < Minitest::Test
     BackCountry.new
   end
 
+  def html
+    html = Nokogiri::HTML(last_response.body)
+  end
+
   def test_homepage
     get '/'
-    html = Nokogiri::HTML(last_response.body)
 
     assert last_response.ok?
     assert_equal "Home - Backcountry Delicatessen", html.css('title').text
@@ -20,7 +23,6 @@ class BackCountryTest < Minitest::Test
 
   def test_our_story
     get '/story'
-    html = Nokogiri::HTML(last_response.body)
 
     assert last_response.ok?
     assert_equal "Our Story", html.css('h1').text
@@ -29,16 +31,37 @@ class BackCountryTest < Minitest::Test
   end
 
   def test_social_love
-    get '/social_love'
-    html = Nokogiri::HTML(last_response.body)
+    get '/social'
 
     assert last_response.ok?
     assert_equal "Social Love - Backcountry Delicatessen", html.css('title').text
-    source = "https://twitter.com/BCDdenver"
-    assert html.css('div.social-stream-206')
   end
 
   def test_franchise_info
-    get 
+    get '/franchise_info'
+
+    assert last_response.ok?
+    assert_equal "Franchise Info - Backcountry Delicatessen", html.css('title').text
+  end
+
+  def test_contact_us
+    get '/contact_us'
+
+    assert last_response.ok?
+    assert_equal "Contact Us - Backcountry Delicatessen", html.css('title').text
+  end
+
+  def test_menu_hot_breakfast_sandwiches
+    get '/menu/hot_breakfast_sandwiches'
+
+    assert last_response.ok?
+    assert html.css('body').text.include?("Egg, Sausage and Cheddar")
+  end
+
+  def test_menu_specialty_sandwiches
+    get '/menu/specialty_sandwiches'
+
+    assert last_response.ok?
+    # assert html.css('body').text.include?("Egg, Sausage and Cheddar")
   end
 end
