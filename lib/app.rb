@@ -8,7 +8,7 @@ class BackCountry < Sinatra::Base
   end
 
   get '/story' do
-    erb :our_story
+    erb :home_our_story
   end
 
   get '/admin/story' do
@@ -16,7 +16,7 @@ class BackCountry < Sinatra::Base
   end
 
   get '/social' do
-    erb :social_love
+    erb :home_social_love
   end
 
   get '/admin/social' do
@@ -24,7 +24,7 @@ class BackCountry < Sinatra::Base
   end
 
   get '/franchise_info' do
-    erb :franchise_info
+    erb :home_franchise_info
   end
 
   get '/admin/franchise_info' do
@@ -32,31 +32,31 @@ class BackCountry < Sinatra::Base
   end
 
   get '/contact_us' do
-    erb :contact_us
+    erb :home_contact_us
   end
 
   get '/admin/contact_us' do
     erb :admin_contact_us
   end
 
-  get '/menu/hot_breakfast_sandwiches' do
-    erb :hot_breakfast_sandwiches
+  get '/menu/specialty_sandwiches' do
+    erb :menu_specialty_sandwiches
   end
 
-  get '/menu/specialty_sandwiches' do
-    erb :specialty_sandwiches
+  get '/menu/hot_breakfast_sandwiches' do
+    erb :menu_hot_breakfast_sandwiches
   end
 
   get '/menu/build_your_own_sandwiches' do
-    erb :build_your_own_sandwich
+    erb :menu_build_your_own_sandwich
+  end
+
+  get '/menu/catering' do
+    erb :menu_catering
   end
 
   get '/menu/other_food' do
-    erb :other_food
-  end
-
-  get 'menu/catering' do
-    erb :catering
+    erb :menu_other_food
   end
 
   get '/admin/menu/:menu' do |type|

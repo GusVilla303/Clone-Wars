@@ -1,0 +1,62 @@
+<!-- We could do something like this...  not sure what to do about columns -->
+<!doctype html>
+
+<!doctype html>
+
+  <!--[if lt IE 7]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if (IE 7)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
+  <!--[if (IE 8)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9"><![endif]-->
+  <!--[if gt IE 8]><!--> <html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js"><!--<![endif]-->
+
+  <head>
+    <%= erb :head %>
+
+    <title>Specialty Sandwiches - Backcountry Delicatessen</title>
+
+  </head>
+  <body class="page page-id-9 page-parent page-template-default">
+
+    <div id="container">
+
+      <%= erb :header %>
+
+      <div id="content">
+        <div id="foodmenu_wrapper">
+          <div class="foodmenu-left">
+          <h1><%= menu.type %></h1>
+          <!-- print each menu item for that menu type -->
+          <%menu.type.each do |item| %>
+             <div class="foodcol-1">
+              <p>
+                <span class="food-type"><%= item.type%><br /></span>
+              </p>
+              <div class="food-title-area">
+                <p>
+                  <strong><span class="food-title"><%= item.title%></span></strong>
+                  <span class="toasted"><%= item.toasted?%>
+                  </span>
+                  <span class="food-price"><%= item.food_price%>></span><br />
+                  <%item.description%>
+                </p>
+              </div>
+            <%end%>
+            <div class="clearfix"></div>
+          </div> <!-- foodmenu_left -->
+
+          <%= erb :menu_right %>
+
+          <div class="clearfix"></div>
+
+        </div> <!-- foodmenu-wrapper -->
+      </div> <!-- end #content -->
+
+      <%= erb :footer %>
+
+    </div> <!-- end #container -->
+
+    <!-- all js scripts are loaded in library/bones.php -->
+    <%= erb :script %>
+<!--wp_footer-->
+  </body>
+
+</html> <!-- end page. what a ride! -->

@@ -1,4 +1,4 @@
-!doctype html>
+<!doctype html>
 
 <!--[if lt IE 7]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
@@ -15,7 +15,7 @@
 
 		<div id="container">
 
-			<% erb :header %>
+			<%= erb :header %>
 
 			<div id="content">
 				<div id="foodmenu_wrapper">
@@ -137,22 +137,7 @@
 						</div>
 					</div> <!-- foodmenu_left -->
 
-					<div class="foodmenu-right">
-						<h1>Menu</h1>
-						<div class="foodmenu-menu">
-							<div class="menu-menu-container">
-								<ul id="menu-menu" class="menu">
-									<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="http://backcountry-deli.com/menu/hot-breakfast-sandwiches/" >Hot Breakfast Sandwiches</a></li>
-									<li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-page-parent menu-item-57"><a href="http://backcountry-deli.com/menu/" >Specialty Sandwiches</a></li>
-									<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-49 current_page_item menu-item-59"><a href="http://backcountry-deli.com/menu/build-your-own/" >Build Your Own Sandwich</a></li>
-									<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="http://backcountry-deli.com/menu/salads-soups-sides-drinks/" >Salads, Soups, Sides, Drinks</a></li>
-									<li id="menu-item-301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301"><a href="http://backcountry-deli.com/menu/catering-menu/" >Catering Menu</a></li>
-									<li id="menu-item-562" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-562"><a target="_blank" href="http://backcountry-deli.com/wp-content/uploads/2013/02/breakfast-lunch-menu.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://backcountry-deli.com/wp-content/uploads/2013/02/breakfast-lunch-menu.pdf']);">Main Menu (PDF)</a></li>
-									<li id="menu-item-563" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-563"><a target="_blank" href="http://backcountry-deli.com/wp-content/uploads/2013/02/catering-menu.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://backcountry-deli.com/wp-content/uploads/2013/02/catering-menu.pdf']);">Catering Menu (PDF)</a></li>
-								</ul>
-							</div>
-						</div> <!-- foodmenu-menu -->
-					</div> <!-- foodmen-right -->
+					<%= erb :menu_right %>
 					<div class="clearfix"></div>
 				</div> <!-- foodmenu-wrapper -->
 			</div> <!-- end #content -->
@@ -162,12 +147,7 @@
 		</div> <!-- end #container -->
 
 		<!-- all js scripts are loaded in library/bones.php -->
-		<script type="text/javascript">
-		var addthis_config = {"data_track_clickback":false,"data_track_addressbar":false,"data_track_textcopy":false,"ui_atversion":"300"};
-		var addthis_product = 'wpp-3.5.9';
-		</script>
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515a10e61b7f4068"></script>
-		<script type='text/javascript' src='http://backcountry-deli.com/wp-content/themes/bones/library/js/scripts.js'></script>
+		<%= erb :script %>
 		<!--wp_footer-->
 	</body>
 </html> <!-- end page. what a ride! -->
