@@ -1,0 +1,3 @@
+class MenuStore
+   
+end
