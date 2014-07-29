@@ -80,6 +80,11 @@ class BackCountry < Sinatra::Base
     erb :location_steamboat_springs
   end
 
+  get '/admin/denver' do 
+    # full_location = LocationStore.get_location(location)
+    erb :admin_location#, locals: {location: full_location}
+  end
+
   get '/admin_locations/:location' do |location|
     # full_location = LocationStore.get_location(location)
     erb :admin_location#, locals: {location: full_location}
