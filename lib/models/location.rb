@@ -9,7 +9,8 @@ class Location
               :header,
               :title,
               :community_header,
-              :community_body
+              :community_body,
+              :body
   def initialize(attributes)
     @name             = attributes["name"]
     @city             = attributes["city"]
@@ -20,7 +21,8 @@ class Location
     @daily_special    = attributes["daily_special"]
     @header           = attributes["header"]
     @title            = attributes["title"]
+    @body             = attributes["body"]
     @community_header = attributes["community_header"]
-    @community_body   = attributes["community_body"] 
+    @community_body   = attributes["community_body"]
   end
 end
