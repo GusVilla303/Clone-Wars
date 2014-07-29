@@ -1,3 +1,6 @@
+require 'other/login'
+require 'other/location_store'
+
 class BackCountry < Sinatra::Base
   get '/' do
     erb :index
@@ -7,11 +10,22 @@ class BackCountry < Sinatra::Base
     erb :admin_index
   end
 
+  post '/admin' do
+    Login.set_info(params)
+    redirect '/admin'
+  end
+
+  post '/admin_logout'
+    Login.reset
+    redirect '/admin'
+  end
+
   get '/story' do
     erb :home_our_story
   end
 
-  get '/admin/story' do
+  get '/admin_story' do
+
     erb :admin_our_story
   end
 
@@ -19,7 +33,7 @@ class BackCountry < Sinatra::Base
     erb :home_social_love
   end
 
-  get '/admin/social' do
+  get '/admin_social' do
     erb :admin_social_love
   end
 
@@ -27,7 +41,7 @@ class BackCountry < Sinatra::Base
     erb :home_franchise_info
   end
 
-  get '/admin/franchise_info' do
+  get '/admin_franchise_info' do
     erb :admin_franchise_info
   end
 
@@ -35,7 +49,7 @@ class BackCountry < Sinatra::Base
     erb :home_contact_us
   end
 
-  get '/admin/contact_us' do
+  get '/admin_contact_us' do
     erb :admin_contact_us
   end
 
@@ -59,7 +73,7 @@ class BackCountry < Sinatra::Base
     erb :menu_other_food
   end
 
-  get '/admin_menu/:menu' do |type|
+  get '/admin/:menu' do |type|
     # menu_type = MenuStore.get_menu(type)
     erb :admin_menu#, locals: {menu_type: menu_type}
   end
@@ -68,26 +82,41 @@ class BackCountry < Sinatra::Base
     erb :location_denver
   end
 
+  get '/admin/:city' do |city|
+    location = LocationStore.get_location(city)
+    erb :admin_our_story
+  end
+
+  get '/admin_denver' do
+    location = LocationStore.get_location('Denver')
+    erb :admin_location_denver
+  end
+
   get '/fort_collins' do
     erb :location_fort_collins
+  end
+
+  get '/admin_fort_collins' do
+    location = LocationStore.get_location('Fort Collins')
+    erb :admin_location_fort_collins, locals: {location: location}
   end
 
   get '/jackson_hole' do
     erb :location_jackson_hole
   end
 
+  get '/admin_jackson_hole' do
+    location = LocationStore.get_location('Jackson Hole')
+    erb :admin_location_jackson_hole, locals: {location: location}
+  end
+
   get '/steamboat_springs' do
     erb :location_steamboat_springs
   end
 
-  get '/admin/denver' do 
-    # full_location = LocationStore.get_location(location)
-    erb :admin_location#, locals: {location: full_location}
-  end
-
-  get '/admin_locations/:location' do |location|
-    # full_location = LocationStore.get_location(location)
-    erb :admin_location#, locals: {location: full_location}
+  get 'admin_steamboat_springs' do
+    location = LocationStore.get_location('Steamboat Springs')
+    erb :location_steamboat_springs, locals: {location: location}
   end
 
   get '/order_online_denver' do
