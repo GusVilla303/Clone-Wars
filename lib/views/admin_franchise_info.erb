@@ -21,37 +21,56 @@
 
         <div id="inner-content" class="wrap clearfix">
 
-
-          ##This is what Chad and I have for our form, but we NEED to understand the database stuff before proceeding.
-          <!-- <form action='/admin_franchise_info' method="POST">
-            <input type='text' name='franchise_info[title]' value="<%= franchise_info.title %>"/><br/>
-            <textarea name="franchise_info[description]"><%= franchise_info.description %>></textarea><br/>
-          </form> -->
-
-
           <div id="main" class="eightcol first clearfix" role="main">
             <article id="post-7" class="post-7 page type-page status-publish hentry clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+                <form class = 'title' action= '/admin/franchise_info' method="POST">
+                  <textarea name='franchise_info[title]' cols= "20" rows= "1">Franchise Info Title</textarea>
+                </form>
+                <input type='Submit' />
                 <header class="article-header">
-                    <h1 class="page-title" itemprop="headline">Franchise Info</h1>
-                 </header> <!-- end article header -->
+                    <h1 class="page-title" itemprop="headline">
+                      <form class = 'header' action= '/admin/frachise_info' method="POST">
+                        <textarea name='franchise_info[header]' cols= "20" rows= "1">Franchise Info Header</textarea>
+                      </form>
+                    </h1>
+                    <input type='Submit' />
+                </header> <!-- end article header -->
 
                 <section class="entry-content clearfix" itemprop="articleBody">
-                    <p>Backcountry Delicatessen’s plan of growth is to choose select locations that connect with our unique brand and philosophy. Think your community could be a good fit for a Backcountry Delicatessen? Well, we’re interested in talking with you.</p>
-                    <p>Before we do, here’s a few of our company&#8217;s primary values:</p>
-                    <ul>
-                      <li>Providing a fresh concept with unique and great tasting fare</li>
-                      <li>Sourcing the highest quality/ freshest ingredients</li>
-                      <li>Supporting franchisees around the clock</li>
-                      <li>Promoting an active and healthy lifestyle-culture</li>
-                      <li>Bringing the mountain lifestyle to your neighborhood</li>
-                      <li>Creating strong community presence-involvement-commitment</li>
-                      <li>Bringing value to community business infrastructure</li>
-                      <li>Being passionate about who and what we are</li>
-                      <li>Bringing strong brand loyalty/following</li>
-                      <li>Rewarding cost structure</li>
-                    </ul>
-                    <p>Contact us by clicking the button in the right sidebar to fill out a Franchise Inquiry form.</p>
-                    <p><strong>Let’s start the conversation.</strong></p>
+                    <form class = 'description' action= '/admin/franchise_info' method="POST">
+                      <textarea name="franchise_info[description]" cols= "100" rows= "5">Backcountry Delicatessen’s plan of growth is to choose select locations that connect with our unique brand and philosophy. Think your community could be a good fit for a Backcountry Delicatessen? Well, we’re interested in talking with you.</textarea>
+                    </form>
+                    <input type='Submit' />
+                    <form class = 'sub_description' action= '/admin/franchise_info' method="POST">
+                      <textarea name="franchise_info[sub_description]" cols= "100" rows= "2">Before we do, here’s a few of our company&#8217;s primary values:</textarea>
+                    </form>
+                    <input type='Submit' />
+                    <form class = 'unordered list' action= '/admin/franchise_info' method="POST">
+                      <textarea name="franchise_info[unordered_list]" cols="100" rows="10">
+                        <li>Providing a fresh concept with unique and great tasting fare</li>
+                        <li>Sourcing the highest quality/ freshest ingredients</li>
+                        <li>Supporting franchisees around the clock</li>
+                        <li>Promoting an active and healthy lifestyle-culture</li>
+                        <li>Bringing the mountain lifestyle to your neighborhood</li>
+                        <li>Creating strong community presence-involvement-commitment</li>
+                        <li>Bringing value to community business infrastructure</li>
+                        <li>Being passionate about who and what we are</li>
+                        <li>Bringing strong brand loyalty/following</li>
+                        <li>Rewarding cost structure</li>
+                     </textarea>
+                    </form>
+                    <input type='Submit' />
+                    <form class = 'inquiry_line' action= '/admin/franchise_info' method="POST">
+                      <textarea name="franchise_info[inquiry_line]" cols="100" rows="2">Contact us by clicking the button in the right sidebar to fill out a Franchise Inquiry form.</textarea>
+                    </form>
+                    <input type='Submit' />
+                    <h3><strong>
+                    <form class='start_convo' action='/admin/franchise_info' method="POST">
+                      <textarea name="franchise_info[start_convo]" cols="100" rows="2">Let’s start the conversation.</textarea>
+                    </form>
+                    <h3></strong>
+                    <input type='Submit' />
+
                 </section> <!-- end article section -->
 
                 <footer class="article-footer"> </footer> <!-- end article footer -->
