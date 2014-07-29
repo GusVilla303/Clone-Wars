@@ -8,53 +8,44 @@
 	<head>
 		<%= erb :head %>
 
-		<title>Fort Collins - Backcountry Delicatessen</title>
+		<title>Order Online - Backcountry Delicatessen</title>
 
 	</head>
 
-	<body class="page page-id-527 page-child parent-pageid-131 page-template page-template-page-home-php">
+	<body class="page page-id-530 page-child parent-pageid-131 page-template page-template-page-home-php">
 
 		<div id="container">
 
-			<%= erb :header %>
-				<div id="content">
-					<div id="the_slideshow">
-						<div id="slideshow_container">
-							<h3>Order Online – Backcountry Delicatessen Fort Collins</h3>
-							<a href="#zuppler-cart" class="z_view_cart" style="display:none;">View Order</a>
-							<div id="z_content" class="cart-right">
-								<div id="zuppler-account"></div>
-								<div id="z_main">
-									<div id="z_main_column">
-										<div id="zuppler-menu"></div>
-									</div>
-								</div>
-								<div id="z_sidebar">
-									<div id="zuppler-cart"></div>
-								</div>
+		<%= erb :header %>
+			<div id="content">
+				<div id="the_slideshow">
+					<div id="slideshow_container">
+						<h3>Order Online – Backcountry Delicatessen Fort Collins</h3>
+						<a href="#zuppler-cart" class="z_view_cart" style="display:none;">View Order</a>
+      			<div id="z_content" class="cart-right">
+        			<div id="zuppler-account"></div>
+        			<div id="z_main">
+								<div id="z_main_column">
+									<div id="zuppler-menu"></div>
+        				</div>
 							</div>
-							<img src="http://backcountry-deli.com/wp-content/themes/bones/library/images/tagline-overlay.png" alt="Eat well. Be bold." id="slideshow_tagline" />
-						</div>
-					</div> <!-- the_slideshow -->
-		</div> <!-- end #content -->
+        			<div id="z_sidebar">
+          			<div id="zuppler-cart"></div>
+        			</div>
+      			</div>
+						<img src="http://backcountry-deli.com/wp-content/themes/bones/library/images/tagline-overlay.png" alt="Eat well. Be bold." id="slideshow_tagline" />
+					</div>
+				</div> <!-- the_slideshow -->
+			</div> <!-- end #content -->
+			<%= erb :footer %>
 
-		<%= erb :footer %>
-
-	</div> <!-- end #container -->
+		</div> <!-- end #container -->
 
 		<!-- all js scripts are loaded in library/bones.php -->
 			<%= erb :script %>
-			<script id='customGallery' type='html/_tmpl'>
-				<% _.each(obj, function(picture) { %>
-					<% if(picture.available) { %>
-						<img src='<%= picture.original %>' width='300' title='' />
-					<% } %>
-				<% }); %>
-			</script>
-			<script type='text/javascript' charset='utf-8'></script>
-			<script type='text/javascript' src='http://api.zuppler.com/channels/backcountrydelicatessenlincolnave/restaurants/backcountrydelicatessencollegeavenue/menu.js' defer='defer'></script>
-		<!--wp_footer-->
-
+      <script type='text/javascript' charset='utf-8'></script>
+			<script type='text/javascript' src='http://api.zuppler.com/channels/backcountrydelicatessenlincolnave/restaurants/backcountrydelicatessennorthcollegeavenue/menu.js' defer='defer'></script>
+<!--wp_footer-->
 	</body>
 
 </html> <!-- end page. what a ride! -->

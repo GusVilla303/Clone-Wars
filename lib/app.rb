@@ -59,7 +59,7 @@ class BackCountry < Sinatra::Base
     erb :menu_other_food
   end
 
-  get '/admin/menu/:menu' do |type|
+  get '/admin_menu/:menu' do |type|
     # menu_type = MenuStore.get_menu(type)
     erb :admin_menu#, locals: {menu_type: menu_type}
   end
@@ -80,7 +80,7 @@ class BackCountry < Sinatra::Base
     erb :location_steamboat_springs
   end
 
-  get '/admin/locations/:location' do |location|
+  get '/admin_locations/:location' do |location|
     # full_location = LocationStore.get_location(location)
     erb :admin_location#, locals: {location: full_location}
   end
@@ -100,10 +100,4 @@ class BackCountry < Sinatra::Base
   get '/order_online_steamboat_springs' do
     erb :order_online_steamboat_springs
   end
-
-  get '/admin/order_online/:location/' do |location|
-    # order_location = LocationStore.get_location(location)
-    erb :admin_order_online#, locals: {location: order_location}
-  end
-
 end

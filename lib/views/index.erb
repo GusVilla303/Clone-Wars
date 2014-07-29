@@ -1,9 +1,9 @@
 <!doctype html>
 
-<!--[if lt IE 7]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js"><!--<![endif]-->
+	<!--[if lt IE 7]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+	<!--[if (IE 7)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
+	<!--[if (IE 8)&!(IEMobile)]><html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js lt-ie9"><![endif]-->
+	<!--[if gt IE 8]><!--> <html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js"><!--<![endif]-->
 
 	<head>
 	<%= erb :head %>
@@ -13,64 +13,63 @@
 	</head>
 	<body class="home page page-id-2 page-template page-template-page-home-php">
 
-			<div id="container">
-				<%= erb :header %>
+		<div id="container">
 
-				<div id="content">
-					<div id="the_slideshow">
-						<div id="slideshow_container">
-													    <!-- meta slider -->
-	<div style="max-width: falsepx;" class="metaslider metaslider-flex metaslider-114 ml-slider nav-hidden">
+			<%= erb :header %>
+			<div id="content">
+				<div id="the_slideshow">
+					<div id="slideshow_container"><!-- meta slider -->
+						<div style="max-width: falsepx;" class="metaslider metaslider-flex metaslider-114 ml-slider nav-hidden">
+					    <div id="metaslider_container_114">
+					      <div id="metaslider_114" class="flexslider">
+					        <ul class="slides">
+		                <li style="display: inline-block; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/03/BCD-_0007_home-page-slider-0x290.jpg" height="290" alt="" class="slider-114 slide-269" /></li>
+		                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/02/snow-tracks-0x290.jpg" height="290" alt="" class="slider-114 slide-387" /></li>
+		                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/03/BCD-_0005_home-page-slider3-0x290.jpg" height="290" alt="" class="slider-114 slide-267" /></li>
+		                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/02/crowd1-0x290.jpg" height="290" alt="" class="slider-114 slide-600" /></li>
+		                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/03/BCD-_0003_home-page-slider5-0x290.jpg" height="290" alt="" class="slider-114 slide-265" /></li>
+		                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/02/mountain-0x290.jpg" height="290" alt="" class="slider-114 slide-388" /></li>
+		                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/03/BCD-_0001_home-page-slider7-0x290.jpg" height="290" alt="" class="slider-114 slide-263" /></li>
+		                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/03/BCD-_0000_home-page-slider8-0x290.jpg" height="290" alt="" class="slider-114 slide-262" /></li>
+					        </ul>
+					      </div>
+							</div>
+					    <script type="text/javascript">
+					        var metaslider_114 = function($) {
+					            $('#metaslider_114').flexslider({
+					                slideshowSpeed:4000,
+					                animation:"fade",
+					                controlNav:false,
+					                directionNav:true,
+					                pauseOnHover:false,
+					                direction:"horizontal",
+					                reverse:false,
+					                animationSpeed:1000,
+					                prevText:"Previous",
+					                nextText:"Next",
+					                slideshow:true
+					            });
+					        };
+					        	var timer_metaslider_114 = function() {
+					        	var slider = !window.jQuery ? window.setTimeout(timer_metaslider_114, 100) : !jQuery.isReady ? window.setTimeout(timer_metaslider_114, 1) : metaslider_114(window.jQuery);
+					        };
+					        timer_metaslider_114();
+					    </script>
+						</div><!--// meta slider-->
+							<img src="http://backcountry-deli.com/wp-content/themes/bones/library/images/tagline-overlay.png" alt="Eat well. Be bold." id="slideshow_tagline" />
+					</div>
+				</div> <!-- the_slideshow -->
+			</div> <!-- end #content -->
+			<%= erb :footer %>
+		</div> <!-- end #container -->
 
-	    <div id="metaslider_container_114">
-	        <div id="metaslider_114" class="flexslider">
-	            <ul class="slides">
-	                <li style="display: inline-block; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/03/BCD-_0007_home-page-slider-0x290.jpg" height="290" alt="" class="slider-114 slide-269" /></li>
-	                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/02/snow-tracks-0x290.jpg" height="290" alt="" class="slider-114 slide-387" /></li>
-	                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/03/BCD-_0005_home-page-slider3-0x290.jpg" height="290" alt="" class="slider-114 slide-267" /></li>
-	                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/02/crowd1-0x290.jpg" height="290" alt="" class="slider-114 slide-600" /></li>
-	                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/03/BCD-_0003_home-page-slider5-0x290.jpg" height="290" alt="" class="slider-114 slide-265" /></li>
-	                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/02/mountain-0x290.jpg" height="290" alt="" class="slider-114 slide-388" /></li>
-	                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/03/BCD-_0001_home-page-slider7-0x290.jpg" height="290" alt="" class="slider-114 slide-263" /></li>
-	                <li style="display: none; float: left; width: 100%;"><img src="http://backcountry-deli.com/wp-content/uploads/2013/03/BCD-_0000_home-page-slider8-0x290.jpg" height="290" alt="" class="slider-114 slide-262" /></li>
-	            </ul>
-	        </div>
-
-	    </div>
-	    <script type="text/javascript">
-	        var metaslider_114 = function($) {
-	            $('#metaslider_114').flexslider({
-	                slideshowSpeed:4000,
-	                animation:"fade",
-	                controlNav:false,
-	                directionNav:true,
-	                pauseOnHover:false,
-	                direction:"horizontal",
-	                reverse:false,
-	                animationSpeed:1000,
-	                prevText:"Previous",
-	                nextText:"Next",
-	                slideshow:true
-	            });
-	        };
-	        var timer_metaslider_114 = function() {
-	            var slider = !window.jQuery ? window.setTimeout(timer_metaslider_114, 100) : !jQuery.isReady ? window.setTimeout(timer_metaslider_114, 1) : metaslider_114(window.jQuery);
-	        };
-	        timer_metaslider_114();
-	    </script>
-	</div>
-	<!--// meta slider-->
-								<img src="http://backcountry-deli.com/wp-content/themes/bones/library/images/tagline-overlay.png" alt="Eat well. Be bold." id="slideshow_tagline" />
-						    					</div>
-					</div> <!-- the_slideshow -->
-				</div> <!-- end #content -->
-
-				<%= erb :footer %>
-
-			</div> <!-- end #container -->
-
-			<!-- all js scripts are loaded in library/bones.php -->
+		<!-- all js scripts are loaded in library/bones.php -->
 		<%= erb :script %>
-	<!--wp_footer-->
+
+		<link rel='stylesheet' id='metaslider-flex-slider-css'  href='http://backcountry-deli.com/wp-content/plugins/ml-slider/assets/sliders/flexslider/flexslider.css' type='text/css' media='all' />
+		<link rel='stylesheet' id='metaslider-public-css'  href='http://backcountry-deli.com/wp-content/plugins/ml-slider/assets/metaslider/public.css' type='text/css' media='all' />
+		<script type='text/javascript' src='http://backcountry-deli.com/wp-content/plugins/ml-slider/assets/sliders/flexslider/jquery.flexslider-min.js'></script>
+<!--wp_footer-->
 	</body>
-</html>
+
+</html> <!-- end page. what a ride! -->

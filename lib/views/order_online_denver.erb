@@ -44,13 +44,6 @@
 
 		<!-- all js scripts are loaded in library/bones.php -->
 			<%= erb :script %>
-		  <script id='customGallery' type='html/_tmpl'>
-		    <% _.each(obj, function(picture) { %>
-		      <% if(picture.available) { %>
-		        <img src='<%= picture.original %>' width='300' title='' />
-		      <% } %>
-		    <% }); %>
-		  </script>
 		  <script type='text/javascript' charset='utf-8'></script>
 			<script type='text/javascript' src='http://api.zuppler.com/channels/backcountrydelicatessenlincolnave/restaurants/backcountrydelicatessenwazeest/menu.js' defer='defer'></script>
 		<!--wp_footer-->
