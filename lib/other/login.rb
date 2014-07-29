@@ -1,14 +1,16 @@
 class Login
   def self.set_info(info)
-      @user = info[:username]
-      @password = info[:password]
+    @@user = info['user']
+    @@password = info['password']
+    require 'pry'
+    binding.pry
   end
 
-  def self.verify
-    @user == 'admin' && @password == 'admin'
+  def self.verify?
+    @@user == 'admin' && @password == 'admin'
   end
 
   def self.reset
-    @user == '' && @password == ''
+    (@@user == '') && (@@password == '')
   end
 end

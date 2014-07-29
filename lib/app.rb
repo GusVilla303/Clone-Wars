@@ -1,7 +1,20 @@
 require 'other/login'
 require 'other/location_store'
+require 'rack_session_access'
 
 class BackCountry < Sinatra::Base
+
+  enable :sessions
+  use RackSessionAccess if environment == :test
+  set :session_secret, 'admin'
+
+  helpers do
+    def admin?
+      session[:user] == "admin"
+      #redirect '/login' unless session[:user]
+    end
+  end
+
   get '/' do
     erb :index
   end
@@ -11,12 +24,16 @@ class BackCountry < Sinatra::Base
   end
 
   post '/admin' do
-    Login.set_info(params)
-    redirect '/admin'
+    if params[:user] == "admin" && params[:password] == "admin"
+      session[:user] = "admin"
+    else
+      session[:user] = ''
+    end
+    erb :admin_index
   end
 
-  post '/admin_logout'
-    Login.reset
+  post '/admin_logout' do
+    session[:user] = ''
     redirect '/admin'
   end
 
@@ -25,8 +42,11 @@ class BackCountry < Sinatra::Base
   end
 
   get '/admin_story' do
-
-    erb :admin_our_story
+    if admin?
+      erb :admin_our_story
+    else
+      redirect '/admin'
+    end
   end
 
   get '/social' do
@@ -34,7 +54,11 @@ class BackCountry < Sinatra::Base
   end
 
   get '/admin_social' do
-    erb :admin_social_love
+    if admin?
+      erb :admin_social_love
+    else
+      redirect '/admin'
+    end
   end
 
   get '/franchise_info' do
@@ -42,7 +66,11 @@ class BackCountry < Sinatra::Base
   end
 
   get '/admin_franchise_info' do
-    erb :admin_franchise_info
+    if admin?
+      erb :admin_franchise_info
+    else
+      redirect '/admin'
+    end
   end
 
   get '/contact_us' do
@@ -50,7 +78,11 @@ class BackCountry < Sinatra::Base
   end
 
   get '/admin_contact_us' do
-    erb :admin_contact_us
+    if admin?
+      erb :admin_contact_us
+    else
+      redirect '/admin'
+    end
   end
 
   get '/specialty_sandwiches' do
