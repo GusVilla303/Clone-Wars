@@ -1,5 +1,4 @@
-require 'other/login'
-require 'other/location_store'
+require_relative 'models/login'
 
 class BackCountry < Sinatra::Base
   get '/' do
