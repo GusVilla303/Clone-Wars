@@ -7,9 +7,9 @@ require './lib/models/data_scraper'
 class DataScraperTest < Minitest::Test
   attr_reader :page, :filename, :raw_html, :data_scraper
   def setup
-    @filename = './lib/views/home_our_story.erb'
-    @raw_html = File.read(filename)
-    @page = Nokogiri::HTML(raw_html)
+    @filename     = './lib/views/home_our_story.erb'
+    @raw_html     = File.read(filename)
+    @page         = Nokogiri::HTML(raw_html)
     @data_scraper = DataScraper.new(filename)
   end
 
