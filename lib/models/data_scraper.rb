@@ -8,19 +8,13 @@ class DataScraper
     @page = Nokogiri::HTML(raw_html)
   end
 
-  def title
-    page.css('title').text.strip
+  def format_input(text)
+    pure_text = text.gsub(/\t/, '')
+    pure_text.strip
   end
 
-  def header
-    page.css('header').text.strip
-  end
-
-  def h2
-    page.css('h2').text.strip
-  end
-
-  def body
-    page.css('div.main_body').text.strip
+  def get_text(attribute)
+    text = page.css(attribute).text
+    format_input(text)
   end
 end
