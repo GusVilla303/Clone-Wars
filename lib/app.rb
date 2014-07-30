@@ -1,7 +1,14 @@
 require 'rack_session_access'
 require_relative 'models/login'
+require_relative 'models/database'
 
 class BackCountry < Sinatra::Base
+
+  configure do
+    def pages
+      @pages ||= Database.new
+    end
+  end
 
   enable :sessions
   use RackSessionAccess if environment == :test
@@ -14,8 +21,16 @@ class BackCountry < Sinatra::Base
     end
   end
 
+  not_found do
+    erb :error
+  end
+
   get '/' do
     erb :index
+  end
+
+  post '/' do
+    redirect '/'
   end
 
   get '/admin' do
@@ -37,15 +52,20 @@ class BackCountry < Sinatra::Base
   end
 
   get '/story' do
-    erb :home_our_story
+    erb :home_our_story, locals: {pages: pages.connection[:page]} 
   end
 
   get '/admin_story' do
     if admin?
-      erb :admin_our_story
+      erb :admin_our_story, locals: {pages: pages.connection[:page]}
     else
       redirect '/admin'
     end
+  end
+
+  post '/admin_story/:attribute' do |attribute|
+    pages.update(30, attribute, params[attribute])
+    redirect '/admin_story'
   end
 
   get '/social' do
