@@ -21,20 +21,22 @@
         <div id="foodmenu_wrapper">
           <div class="foodmenu-left">
             <h1>
-              <form action='/admin_menu/<%= menu %>' method='POST'>
+              <form action='/admin_menu/<%= menu.id %>' method='POST'>
                 <input type='text' name='menu[title]' value="<%= menu.title %>">
               </form>
             </h1>
             <div class="foodcol-1">
                 <span class="food-type"></span>
-              </p>
-              <% menu.items[0..2].each_with_index do |item, k| %>
+              </p>3e`+
+              <% menu.items.each do |item| %>
                 <div class="food-title-area">
-                  <form action='/admin_menu_hot_breakfast' method='POST'>
-                    <input type='text' name="<%= menu.items[k].title %>" value="<%= item"
-                    <span class="toasted"></span>
+                  <form action='/admin_menu_update/<%= item.id %>' method='POST'>
+                    <input type='text' name="item[title]" value="<%= item.title %>"
+                    <input type='checkbox' name="item[toasted]" value='<%= item.toasted %>'>
+                    <input type
                     <span class="food-price">item.price</span><br />
                     item.description
+                    <input type='submit' value='Update'>
                   </p>
                 </div>
               <% end %>
