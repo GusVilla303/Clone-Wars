@@ -15,7 +15,7 @@
 
       <div id="container">
 
-      <%= erb :header %>
+      <%= erb :admin_header %>
 
         <div id="content">
 
@@ -40,14 +40,14 @@
 
                   <section class="entry-content clearfix" itemprop="articleBody">
                     <p>
-                      <form class = 'description' action= '/admin/our_story' method="POST">
-                        <textarea name='our_story[description]' cols= "100" rows= "10">Take two fun-loving, yet seriously dedicated guys. Add passion for adventure in the great outdoors, and an equal amount of passion for natural, nutritious, great tasting food that can fuel their lifestyle. Throw in a heavy dose of community involvement. What do you get? Backcountry Delicatessen. That’s the recipe that Peter Boniface and David Pepin used to start it all in 1999 in downtown Steamboat Springs. Today, Backcountry Delicatessens are enjoyed in three additional vibrant and active communities — Jackson Hole, Fort Collins, and Denver. In every Backcountry Deli you visit, you’ll find the same commitment to Peter’s and David’s beginning principles — always natural and fresh ingredients, always the best fare they can make, always the best service they can provide. There’s more to the story of course. But all you need to know is Backcountry is the place to satisfy your hunger for great food and fuel your active life.</textarea>
+                      <form class = 'body' action= '/admin/our_story' method="POST">
+                        <textarea name='our_story[body]' cols= "100" rows= "10">Take two fun-loving, yet seriously dedicated guys. Add passion for adventure in the great outdoors, and an equal amount of passion for natural, nutritious, great tasting food that can fuel their lifestyle. Throw in a heavy dose of community involvement. What do you get? Backcountry Delicatessen. That’s the recipe that Peter Boniface and David Pepin used to start it all in 1999 in downtown Steamboat Springs. Today, Backcountry Delicatessens are enjoyed in three additional vibrant and active communities — Jackson Hole, Fort Collins, and Denver. In every Backcountry Deli you visit, you’ll find the same commitment to Peter’s and David’s beginning principles — always natural and fresh ingredients, always the best fare they can make, always the best service they can provide. There’s more to the story of course. But all you need to know is Backcountry is the place to satisfy your hunger for great food and fuel your active life.</textarea>
                       </form>
                       <input type='submit'/>
                     </p>
                     <p>
-                      <form class = 'new_name' action= '/admin/our_story' method="POST">
-                        <textarea name='our_story[new_name]' cols= "35" rows= "1">New Name. Old Name. Same Commitment.</textarea>
+                      <form class = 'header' action= '/admin/our_story' method="POST">
+                        <textarea name='our_story[new_name_header]' cols= "35" rows= "1">New Name. Old Name. Same Commitment.</textarea>
                       </form>
                       <input type='submit'/>
                     </p>
@@ -59,8 +59,8 @@
                           <input type='submit'/>
                         </p>
                         <p>
-                          <form class = 'name_change_description' action= '/admin/our_story' method="POST">
-                            <textarea name='our_story[name_change_description]' cols= "70" rows= "7">Why? Because when we first opened, virtually every outdoor expedition in the Steamboat Springs region — whether skiing, cycling, rafting, or climbing — made sure to pack into their essential provisions the one thing that made a successful day of adventure certain. Backcountry Provisions fare! Today, we’re pleased to unveil a new name and look to better embody our continued commitment to you and adventurers of every kind.</textarea>
+                          <form class = 'body' action= '/admin/our_story' method="POST">
+                            <textarea name='our_story[new_name_body]' cols= "70" rows= "7">Why? Because when we first opened, virtually every outdoor expedition in the Steamboat Springs region — whether skiing, cycling, rafting, or climbing — made sure to pack into their essential provisions the one thing that made a successful day of adventure certain. Backcountry Provisions fare! Today, we’re pleased to unveil a new name and look to better embody our continued commitment to you and adventurers of every kind.</textarea>
                           </form>
                           <input type='submit'/>
                         </p>

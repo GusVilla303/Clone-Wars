@@ -15,7 +15,15 @@
 
     <div id="container">
 
-      <%= erb :header %>
+      <%= erb :admin_header %>
+      <form action='/admin' method='POST'>
+        <span>
+          Login:
+        </span>
+        <input type='text' name='user'>
+        <input type='password' name='password'>
+        <input type='submit' value='Submit'>
+      </form>
       <div id="content">
         <div id="the_slideshow">
           <div id="slideshow_container"><!-- meta slider -->
