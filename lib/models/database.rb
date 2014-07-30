@@ -1,4 +1,5 @@
 require 'sequel'
+require 'nokogiri'
 
 class Database
   attr_reader :connection
@@ -21,27 +22,27 @@ class Database
     Sequel.sqlite('production.sqlite3')
   end
 
-  def connection_type(type, attribute)
-    @connection = connection.from(type)
+  def define_dataset(type)
+    @dataset = connection.from(type)
   end
 
-  def create(type, attribute)
-    connection_type
-    connection.insert(attribute)
+  def create(type, attributes)
+    define_dataset(type)
+    dataset.insert(attributes)
   end
 
-  def find(type, attribute)
-    connection_type
-    connection.select(attribute)
+  def find(type,attribute)
+    define_dataset(type)
+    dataset.select(attribute)
   end
 
-  def update(type, attribute)
-    connection_type
-    connection.update(attribute)
+  def update(type, id, value)
+    define_dataset(type)
+    dataset.where(:id => id).update(attribute => value)
   end
 
   def delete(type, attribute)
-    connection_type
-    connection.delete(attribute)
+    define_dataset(type)
+    dataset.where(:id => id).delete
   end
 end
