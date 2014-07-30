@@ -8,7 +8,7 @@
 	<head>
 	<%= erb :head %>
 
-	<title>Our Story - Backcountry Delicatessen</title>
+	<title><%= pages.to_a[0][:title]%></title>
 
 	</head>
 	<body class="page page-id-6 page-template-default">
@@ -25,19 +25,17 @@
 
 						    					    <article id="post-6" class="post-6 page type-page status-publish hentry clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
 								<header class="article-header">
-								    <h1 class="page-title" itemprop="headline">Our Story</h1>
+								    <h1 class="page-title" itemprop="headline"><%= pages.to_a[0][:header]%></h1>
 							    </header> <!-- end article header -->
 
 							    <section class="entry-content clearfix" itemprop="articleBody">
 										<div class= "main_body">
-								    	<p>Take two fun-loving, yet seriously dedicated guys. Add passion for adventure in the great outdoors, and an equal amount of passion for natural, nutritious, great tasting food that can fuel their lifestyle. Throw in a heavy dose of community involvement. What do you get? Backcountry Delicatessen.</p>
-											<p>That’s the recipe that Peter Boniface and David Pepin used to start it all in 1999 in downtown Steamboat Springs. Today, Backcountry Delicatessens are enjoyed in three additional vibrant and active communities — Jackson Hole, Fort Collins, and Denver. In every Backcountry Deli you visit, you’ll find the same commitment to Peter’s and David’s beginning principles — always natural and fresh ingredients, always the best fare they can make, always the best service they can provide.</p>
+								    	<p><%= pages.to_a[0][:main_body]%></p>
 										</div>
-											<p>There’s more to the story of course. But all you need to know is Backcountry is the place to satisfy your hunger for great food and fuel your active life.</p>
-										<h2>New Name. Old Name. Same Commitment.</h2>
-										<div class = "image"><p><img class="alignleft size-full wp-image-482" alt="New Logo, Same Values" src="http://backcountry-deli.com/wp-content/uploads/2013/02/2logos.jpg" width="188" height="252" /> Backcountry Delicatessen was originally called Backcountry Provisions.</p></div>
-										<div class = "community_body"><p>Why? Because when we first opened, virtually every outdoor expedition in the Steamboat Springs region — whether skiing, cycling, rafting, or climbing — made sure to pack into their essential provisions the one thing that made a successful day of adventure certain. Backcountry Provisions fare!</p>
-										<p>Today, we’re pleased to unveil a new name and look to better embody our continued commitment to you and adventurers of every kind.</p>
+										<h2 class = 'sub_heading'><%= pages.to_a[0][:sub_heading]%></h2>
+										<div class = "image"><p><img class="alignleft size-full wp-image-482" alt="New Logo, Same Values" src="http://backcountry-deli.com/wp-content/uploads/2013/02/2logos.jpg" width="188" height="252" /> <%= pages.to_a[0][:image_description1]%></p></div>
+										<div class = "sub_body"><p><%= pages.to_a[0][:sub_body]%></p>
+										</div>
 								</section> <!-- end article section -->
 
 							    <footer class="article-footer"> </footer> <!-- end article footer -->
@@ -57,8 +55,8 @@
 
 	    				</div> <!-- end #main -->
 					    	<div id="page_sidebar" class="sidebar">
-			<div id="black-studio-tinymce-2" class="widget widget_black_studio_tinymce">			<div class="textwidget"><p style="font-size: 17px; line-height: 21px;"><img class="alignnone size-full wp-image-422" alt="Dave-and-Pete-1999" src="http://backcountry-deli.com/wp-content/uploads/2013/02/Dave-and-Pete-1999.jpg" width="253" height="150" />Dave and Pete opening the Steamboat Springs Deli - circa 1999</p>
-	<p style="font-size: 17px; line-height: 21px;"><img class="alignnone  wp-image-402" alt="BackcountryDeli-Skiing" src="http://backcountry-deli.com/wp-content/uploads/2013/02/BackcountryDeli-Skiing-e1364560089235-300x178.jpg" width="253" height="150" />The boys today kicking back</p>
+			<div id="black-studio-tinymce-2" class="widget widget_black_studio_tinymce">			<div class="textwidget"><p class = "image1" style="font-size: 17px; line-height: 21px;"><img class="alignnone size-full wp-image-422" alt="Dave-and-Pete-1999" src="http://backcountry-deli.com/wp-content/uploads/2013/02/Dave-and-Pete-1999.jpg" width="253" height="150" /><%= pages.to_a[0][:image_description2]%></p>
+	<p class = 'image2' style="font-size: 17px; line-height: 21px;"><img class="alignnone  wp-image-402" alt="BackcountryDeli-Skiing" src="http://backcountry-deli.com/wp-content/uploads/2013/02/BackcountryDeli-Skiing-e1364560089235-300x178.jpg" width="253" height="150" /><%= pages.to_a[0][:image_description3]%></p>
 	<p><a href="http://backcountry-deli.com/wp-content/uploads/2013/02/BSD-Creed-small.png" ><img class="alignnone size-full wp-image-458" alt="BSD-Creed-small" src="http://backcountry-deli.com/wp-content/uploads/2013/02/BSD-Creed-small.png" width="253" height="363" /></a></p>
 	<p> </p></div>
 	</div>	</div>
