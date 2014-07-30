@@ -4,7 +4,7 @@ class DataLoader
 
   def get_data(filenames)
     data = filenames.map do |filename|
-      Datascraper.new(filename)
+      data_scraper = Datascraper.new(filename)
     end
   end
 

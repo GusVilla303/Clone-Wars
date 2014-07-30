@@ -40,7 +40,7 @@ class Database
                                          price varchar,
                                          toasted varchar(5)
                                          food_desrciption varchar)"
-    DataLoader.new
+                                         
   end
 
   def define_dataset
