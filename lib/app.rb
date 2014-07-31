@@ -240,19 +240,35 @@ class BackCountry < Sinatra::Base
   end
 
   get '/admin_location_denver' do
-    erb :admin_location, locals: {location: pages.connection[:locations].to_a[0]}
+    if admin?
+      erb :admin_location, locals: {location: pages.connection[:locations].to_a[0]}
+    else
+      redirect '/admin'
+    end
   end
 
   get '/admin_location_fort_collins' do
-    erb :admin_location, locals: {location: pages.connection[:locations].to_a[1]}
+    if admin?
+      erb :admin_location, locals: {location: pages.connection[:locations].to_a[1]}
+    else
+      redirect '/admin'
+    end
   end
 
   get '/admin_location_jackson_hole' do
-    erb :admin_location, locals: {location: pages.connection[:locations].to_a[2]}
+    if admin?
+      erb :admin_location, locals: {location: pages.connection[:locations].to_a[2]}
+    else
+      redirect '/admin'
+    end
   end
 
   get '/admin_location_steamboat_springs' do
-    erb :admin_location, locals: {location: pages.connection[:locations].to_a[3]}
+    if admin?
+      erb :admin_location, locals: {location: pages.connection[:locations].to_a[3]}
+    else
+      redirect '/admin'
+    end
   end
 
   post '/admin_location/:id/:attribute' do |id, attribute|
