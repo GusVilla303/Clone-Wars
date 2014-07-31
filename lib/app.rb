@@ -135,9 +135,8 @@ class BackCountry < Sinatra::Base
     erb :menu_other_food
   end
 
-  get '/admin/:menu/' do |type|
-    # menu_type = MenuStore.get_menu(type)
-    erb :admin_menu #, locals: {menu_type: menu_type}
+  get '/admin_menu_hot_breakfast_sandwiches' do
+    erb :admin_menu_hot_breakfast_sandwiches, locals: {menu: pages.connection[:menus].to_a[0], items: pages.connection[:items].where(:menu_id => 1).to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  1).to_a}
   end
 
   get '/denver' do
