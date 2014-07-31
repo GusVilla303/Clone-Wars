@@ -23,9 +23,9 @@
       <div id="content">
         <div id="foodmenu_wrapper">
           <div class="foodmenu-left">
-          <h1><%= menu.type %></h1>
+          <h1><%= menu.title %></h1>
           <!-- print each menu item for that menu type -->
-          <%menu.type.each do |item| %>
+          <% menu.type.each do |item| %>
              <div class="foodcol-1">
               <p>
                 <span class="food-type"><%= item.type%><br /></span>
