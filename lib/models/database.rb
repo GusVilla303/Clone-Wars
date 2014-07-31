@@ -201,7 +201,6 @@ class Database
     :title            => "Bushwacker",
     :price            => "8.95",
     :description      => "curry chicken salad with toasted almonds & granny smith apples, smoked gouda, romaine lettuce",
-    :toasted          => "no"
    )
    @connection[:items].insert(
     :menu_id          => "2",
@@ -217,7 +216,6 @@ class Database
     :title            => "Turkey Trailhead",
     :price            => "8.95",
     :description      => "roasted turkey, swiss, avocado, tomato, red onion, romaine lettuce, honey dijon mustard",
-    :toasted          => "no"
    )
    @connection[:items].insert(
     :menu_id          => "2",
@@ -241,7 +239,6 @@ class Database
     :title            => "Ham Trailhead",
     :price            => "8.95",
     :description      => "smoked ham, swiss, avocado, tomato, red onion, romaine lettuce, honey dijon mustard",
-    :toasted          => "no"
    )
    @connection[:items].insert(
     :menu_id          => "2",
@@ -249,7 +246,6 @@ class Database
     :title            => "Hot Springs",
     :price            => "8.75",
     :description      => "avocado, tomato, red onion, cucumber, carrots, sprouts, field greens, cream cheese, house vinaigrette",
-    :toasted          => "no"
    )
    @connection[:items].insert(
     :menu_id          => "2",
@@ -289,7 +285,6 @@ class Database
     :title            => "Avalanche",
     :price            => "8.95",
     :description      => "top round roast beef, asiago, tomato, romaine lettuce, house vinaigrette",
-    :toasted          => "no"
    )
    @connection[:items].insert(
     :menu_id          => "2",
@@ -329,7 +324,6 @@ class Database
     :title            => "Dolomite",
     :price            => "8.95",
     :description      => "prosciutto, genoa salami, sharp provolone, sweet roasted red peppers, red onion, romaine lettuce, house vinaigrette",
-    :toasted          => "no"
    )
    @connection[:items].insert(
     :menu_id          => "2",
@@ -345,7 +339,6 @@ class Database
     :title            => "Base Camp",
     :price            => "8.95",
     :description      => "german bologna, jarlsburg, tomato, red onion, romaine lettuce, garlic mayo",
-    :toasted          => "no"
    )
    @connection[:items].insert(
     :menu_id          => "2",
@@ -353,7 +346,6 @@ class Database
     :title            => "Braunschweiger",
     :price            => "8.95",
     :description      => "german liverwurst, swiss, red onion, romaine lettuce, dijon mustard",
-    :toasted          => "no",
    )
    @connection[:items].insert(
     :menu_id          => "2",
@@ -369,7 +361,6 @@ class Database
     :title            => "Angler",
     :price            => "9.75",
     :description      => "cold smoked atlantic salmon, dill havarti, sprouts, cucumber, capers, tomato, red onion, field greens, honey dijon mustard",
-    :toasted          => "no"
    )
    @connection[:items].insert(
     :menu_id          => "3",

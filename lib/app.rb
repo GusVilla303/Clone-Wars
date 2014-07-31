@@ -135,8 +135,44 @@ class BackCountry < Sinatra::Base
     erb :menu_other_food
   end
 
-  get '/admin_menu_hot_breakfast_sandwiches' do
+  get '/admin_hot_breakfast_sandwiches' do
     erb :admin_menu_hot_breakfast_sandwiches, locals: {menu: pages.connection[:menus].to_a[0], items: pages.connection[:items].where(:menu_id => 1).to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  1).to_a}
+  end
+
+  post '/admin_menu_item/:attribute/:item_id/:menu_id' do |attribute, item_id, menu_id|
+    pages.update(:items, item_id, attribute, params[attribute])
+    case menu_id
+    when '1'
+      redirect '/admin_hot_breakfast_sandwiches'
+    when '2'
+      redirect '/admin_specialty_sandwiches'
+    when '3'
+      redirect '/admin_build_your_own_sandwich'
+    when '4'
+      redirect '/admin_other_food'
+    else
+      redirect '/admin_catering'
+    end
+  end
+
+  post '/admin_menu/:id' do |id|
+    pages.update(:menus, id, :title, params[:title])
+    case id
+    when '1'
+      redirect '/admin_hot_breakfast_sandwiches'
+    when '2'
+      redirect '/admin_specialty_sandwiches'
+    when '3'
+      redirect '/admin_build_your_own_sandwich'
+    when '4'
+      redirect '/admin_other_food'
+    else
+      redirect '/admin_catering'
+    end
+  end
+
+  post '/admin_menu_heading/:id' do |id|
+
   end
 
   get '/denver' do
