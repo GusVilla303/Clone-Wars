@@ -132,19 +132,39 @@ class BackCountry < Sinatra::Base
   end
 
   get '/other_food' do
-    erb :menu_other_food
+    erb :menu_other_food, locals: {menu: pages.connection[:menus].to_a[3], items: pages.connection[:items].where(:menu_id => '4').to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  '4').to_a}
   end
 
   get '/admin_hot_breakfast_sandwiches' do
-    erb :admin_menu_hot_breakfast_sandwiches, locals: {menu: pages.connection[:menus].to_a[0], items: pages.connection[:items].where(:menu_id => '1').to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  '1').to_a}
+    if admin?
+      erb :admin_menu_hot_breakfast_sandwiches, locals: {menu: pages.connection[:menus].to_a[0], items: pages.connection[:items].where(:menu_id => '1').to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  '1').to_a}
+    else
+      redirect '/admin'
+    end
   end
 
   get '/admin_specialty_sandwiches' do
-    erb :admin_menu_specialty_sandwiches, locals: {menu: pages.connection[:menus].to_a[1], items: pages.connection[:items].where(:menu_id => '2').to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  '2').to_a}
+    if admin?
+      erb :admin_menu_specialty_sandwiches, locals: {menu: pages.connection[:menus].to_a[1], items: pages.connection[:items].where(:menu_id => '2').to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  '2').to_a}
+    else
+      redirect '/admin'
+    end
   end
 
   get '/admin_build_your_own_sandwich' do
-    erb :admin_menu_build_your_own_sandwich, locals: {menu: pages.connection[:menus].to_a[2], items: pages.connection[:items].where(:menu_id => '3').to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  '3').to_a}
+    if admin?
+      erb :admin_menu_build_your_own_sandwich, locals: {menu: pages.connection[:menus].to_a[2], items: pages.connection[:items].where(:menu_id => '3').to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  '3').to_a}
+    else
+      redirect '/admin'
+    end
+  end
+
+  get '/admin_other_food' do
+    if admin?
+      erb :admin_menu_other_food, locals: {menu: pages.connection[:menus].to_a[3], items: pages.connection[:items].where(:menu_id => '4').to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  '4').to_a}
+    else
+      redirect '/admin'
+    end
   end
 
   post '/admin_menu_item/:attribute/:item_id/:menu_id' do |attribute, item_id, menu_id|
