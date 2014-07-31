@@ -8,7 +8,7 @@
 	<head>
 		<%= erb :head %>
 
-		<title>Specialty Sandwiches - Backcountry Delicatessen</title>
+		<title><%= menu[:title] %></title>
 
 	</head>
 	<body class="page page-id-9 page-parent page-template-default">
@@ -20,252 +20,124 @@
 			<div id="content">
 				<div id="foodmenu_wrapper">
 					<div class="foodmenu-left">
-					<h1>Specialty Sandwiches</h1>
+					<h1><%= menu[:title] %></h1>
 				    <div class="foodcol-1">
 							<p>
-								<span class="food-type">Turkey and Chicken<br /></span>
+								<span class="food-type"><%= menu_headings[0][:title] %></span><br /></span>
 							</p>
+							<% items.find_all { |i| i[:menu_heading_id] == menu_headings[0][:id] }.each do |item| %>
 							<div class="food-title-area">
 								<p>
-									<strong><span class="food-title">Pilgrim</span></strong>
-									<span class="toasted">
-										<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
-									</span>
-									<span class="food-price">9.25</span><br />
-									roasted turkey, muenster, seasoned stuffing, cranberry chutney, romaine lettuce, mayo
+									<strong><span class="food-title"><%= item[:title] %></span></strong>
+									<% if item[:toasted] == 'yes'%>
+										<span class="toasted">
+											<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
+										</span>
+									<% end %>
+									<span class="food-price"><%= item[:price] %></span><br />
+									<%= item[:description] %>
 								</p>
 							</div>
-
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Ridgeline</span></strong>
-									<span class="toasted"><img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" /></span>
-									<span class="food-price">9.25</span><br />
-									roasted turkey, sharp cheddar, honey cured bacon, avocado, tomato, romaine lettuce, garlic mayo
-								</p>
-							</div>
-
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Bushwacker</span></strong>
-									<span class="toasted"></span><span class="food-price">8.95</span><br />
-									curry chicken salad with toasted almonds &amp; granny smith apples, smoked gouda, romaine lettuce</p>
-							</div>
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">County Road</span></strong>
-									<span class="toasted"><img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" /></span>
-									<span class="food-price">8.95</span><br />
-									sliced chicken breast, fontina, oven roasted tomatoes, red onion, field greens, pesto mayo
-								</p>
-							</div>
-
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Turkey Trailhead</span></strong>
-									<span class="toasted"></span><span class="food-price">8.95</span><br />
-									roasted turkey, swiss, avocado, tomato, red onion, romaine lettuce, honey dijon mustard</p>
-							</div>
+							<% end %>
 							<p>
-								<span class="food-type">Ham</span>
+								<span class="food-type"><%= menu_headings[1][:title] %></span>
 							</p>
+							<% items.find_all { |i| i[:menu_heading_id] == menu_headings[1][:id] }.each do |item| %>
+							<div class="food-title-area">
+								<p>
+									<strong><span class="food-title"><%= item[:title] %></span></strong>
+									<% if item[:toasted] == 'yes' %>
+										<span class="toasted"><img alt="toasted" src="/http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" /></span>
+									<% end %>
+										<span class="food-price"><%= item[:price] %></span><br />
+										<%= item[:description] %>
+								</p>
+							</div>
+							<% end %>
 
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Backcountry Cuban</span></strong>
-									<span class="toasted"><img alt="toasted" src="/http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" /></span>
-									<span class="food-price">8.95</span><br />
-									smoked ham, slow roasted pulled pork, jarlsburg, chopped pickles, hot cherry peppers, mayo, yellow mustard
-								</p>
-							</div>
-
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Summit</span></strong>
-									<span class="toasted">
-										<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
-									</span>
-									<span class="food-price">9.25</span><br />
-									smoked ham, french brie, honey cured bacon, cranberry chutney, romaine lettuce, chipotle mayo
-								</p>
-							</div>
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Ham Trailhead</span></strong>
-									<span class="toasted"></span><span class="food-price">8.95</span><br />
-									smoked ham, swiss, avocado, tomato, red onion, romaine lettuce, honey dijon mustard
-								</p>
-							</div>
 							<div class="trytoasted">
 								<span class="toasted-big"><img src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" alt="try toasted">Try it toasted</span>
 							</div>
 						</div> <!--food-col-1-->
 						<div class="foodcol-2">
 							<p>
-								<span class="food-type">Veggie</span>
+								<span class="food-type"><%= menu_headings[2][:title] %></span>
 							</p>
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Hot Springs</span></strong>
-									<span class="toasted"></span>
-									<span class="food-price">8.75</span><br />
-									avocado, tomato, red onion, cucumber, carrots, sprouts, field greens, cream cheese, house vinaigrette
-								</p>
-							</div>
+							<% items.find_all { |i| i[:menu_heading_id] == menu_headings[2][:id] }.each do |item| %>
 
 							<div class="food-title-area">
 								<p>
-									<strong><span class="food-title">Sherpa</span></strong>
-									<span class="toasted"><img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" /></span>
-									<span class="food-price">8.95</span><br />
-									grilled eggplant, asiago, sweet roasted red peppers, tomato, romaine lettuce, garlic mayo
+									<strong><span class="food-title"><%= item[:title] %></span></strong>
+									<% if item[:toasted] == 'yes' %>
+									<span class="toasted"></span><img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
+									<% end %>
+									<span class="food-price"><%= item[:price] %></span><br />
+									<%= item[:description] %>
 								</p>
 							</div>
+							<% end %>
 
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">High Plains</span></strong>
-									<span class="toasted"><img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" /></span>
-									<span class="food-price">8.75</span><br />
-									fresh mozzarella, tomato, romaine lettuce, basil pesto
-								</p>
-							</div>
-
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Hidden Valley</span></strong>
-									<span class="toasted">
-										<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
-									</span>
-									<span class="food-price">8.75</span><br />
-									artichoke hearts, chevre, oven roasted tomatoes, field greens, balsamic vinaigrette
-								</p>
-							</div>
 
 							<p>
-								<span class="food-type">Beef</span>
+								<span class="food-type"><%= menu_headings[3][:title] %></span>
 							</p>
+							<% items.find_all { |i| i[:menu_heading_id] == menu_headings[3][:id] }.each do |item| %>
 
 							<div class="food-title-area">
 								<p>
-									<strong><span class="food-title">Expedition</span></strong>
-									<span class="toasted">
-										<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
-									</span>
-									<span class="food-price">9.25</span><br />
-									top round roast beef, sharp cheddar, tomato, avocado, romaine lettuce, chipotle mayo</p>
+									<strong><span class="food-title"><%= item[:title] %></span></strong>
+									<% if item[:toasted] == 'yes' %>
+										<span class="toasted">
+											<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
+										</span>
+									<% end %>
+									<span class="food-price"><% item[:price] %></span><br />
+									<%= item[:description] %>
 							</div>
+							<% end %>
 
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Avalanche</span></strong>
-									<span class="toasted"></span>
-									<span class="food-price">8.95</span><br />
-									top round roast beef, asiago, tomato, romaine lettuce, house vinaigrette
-							</div>
-
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Fourteener</span></strong>
-									<span class="toasted"><img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" /></span>
-									<span class="food-price">8.95</span><br />
-									top round roast beef, crumbled blue cheese, sweet roasted red peppers, romaine lettuce, horseradish mayo
-								</p>
-							</div>
-
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Pinnacle</span></strong>
-									<span class="toasted">
-										<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
-									</span>
-									<span class="food-price">9.25</span><br />
-									lean pastrami, swiss, fresh coleslaw, served with a side of house russian dressing
-							</div>
-
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Emerald</span></strong>
-									<span class="toasted"><img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" /></span>
-									<span class="food-price">8.95</span><br />
-									lean corned beef, swiss, red onion, romaine lettuce, deli brown mustard
-								</p>
-							</div>
 						</div> <!--food-col-2-->
 
 						<div class="foodcol-3">
 							<p>
-								<span class="food-type">European</span>
+								<span class="food-type"><%= menu_headings[4][:title] %></span>
 							</p>
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Godfather</span></strong>
-									<span class="toasted">
-										<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
-									</span>
-									<span class="food-price">8.95</span><br />
-									mortadella, capocollo, sharp provolone, tomato, red onion, romaine lettuce, house vinaigrette
-								</p>
-							</div>
+							<% items.find_all { |i| i[:menu_heading_id] == menu_headings[4][:id] }.each do |item| %>
 
 							<div class="food-title-area">
 								<p>
-									<strong><span class="food-title">Dolomite</span></strong>
-									<span class="toasted"></span><span class="food-price">8.95</span><br />
-									prosciutto, genoa salami, sharp provolone, sweet roasted red peppers, red onion, romaine lettuce, house vinaigrette
-							</div>
-
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">The Grand</span></strong>
-									<span class="toasted">
-										<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
-									</span>
-									<span class="food-price">9.75</span><br />
-									prosciutto, capocollo, sopressata, sharp provolone, tomato, romaine lettuce, garlic mayo, house vinaigrette
+									<strong><span class="food-title"><%= item[:title] %></span></strong>
+									<% if item[:toasted] == 'yes' %>
+										<span class="toasted">
+											<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
+										</span>
+									<% end %>
+									<span class="food-price"><%= item[:price] %></span><br />
+									<%= item[:description] %>
 								</p>
 							</div>
+							<% end %>
 
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Basecamp</span></strong>
-									<span class="toasted"></span>
-									<span class="food-price">8.95</span><br />
-									german bologna, jarlsburg, tomato, red onion, romaine lettuce, garlic mayo
-								</p>
-							</div>
-
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Braunschweiger</span></strong>
-									<span class="toasted"></span><span class="food-price">8.95</span><br />
-									german liverwurst, swiss, red onion, romaine lettuce, dijon mustard
-								</p>
-							</div>
 
 							<p>
-								<span class="food-type">Fish</span>
+								<span class="food-type"><%= menu_headings[5][:title] %></span>
 							</p>
+							<% items.find_all { |i| i[:menu_heading_id] == menu_headings[4][:id] }.each do |item| %>
 
 							<div class="food-title-area">
 								<p>
-									<strong><span class="food-title">Lost Creek</span></strong>
-									<span class="toasted">
-										<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
-									</span>
-									<span class="food-price">9.25</span><br />
-									all white albacore tuna salad, swiss, avocado, tomato, field greens
+									<strong><span class="food-title"><%= item[:title] %></span></strong>
+									<% if item[:toasted] == 'yes' %>
+										<span class="toasted">
+											<img alt="toasted" src="http://backcountry-deli.com/wp-content/themes/bones/library/images/toasted.png" />
+										</span>
+									<% end %>
+									<span class="food-price"><%= item[:price] %></span><br />
+									<%= item[:description] %>
 								</p>
 							</div>
+							<% end %>
 
-							<div class="food-title-area">
-								<p>
-									<strong><span class="food-title">Angler</span></strong>
-									<span class="toasted"></span>
-									<span class="food-price">9.75</span><br />
-									cold smoked atlantic salmon, dill havarti, sprouts, cucumber, capers, tomato, red onion, field greens, honey dijon mustard
-								</p>
-							</div>
 						</div> <!--food-col-3-->
 						<div class="clearfix"></div>
 					</div> <!-- foodmenu_left -->
