@@ -8,7 +8,7 @@
   <head>
   <%= erb :head %>
 
-  <title>Our Story - Backcountry Delicatessen</title>
+  <title><%= pages.to_a[0][:title] %></title>
 
   </head>
   <body class="page page-id-6 page-template-default">
@@ -33,7 +33,7 @@
                       <form class = 'header' action= '/admin_story' method="POST">
                         <p> Header:<br/>
                           <textarea name='header' cols= "20" rows= "1"><%=pages.to_a[0][:header]%></textarea>
-                        <input type='submit'/>
+                        <input type='submit' value='Update'/>
 
                       </form>
                     </p>
@@ -43,26 +43,26 @@
                     <p>
                       <form class = 'body' action= '/admin_story' method="POST">
                         <textarea name='main_body' cols= "100" rows= "10"><%=pages.to_a[0][:main_body]%></textarea>
-                      <input type='submit'/>
+                      <input type='submit' value='Update'/>
                       </form>
                     </p>
                     <p>
                       <form class = 'header' action= '/admin_story' method="POST">
                         <textarea name='sub_heading' cols= "35" rows= "1"><%=pages.to_a[0][:sub_heading]%></textarea>
-                      <input type='submit'/>
+                      <input type='submit' value='Update'/>
                       </form>
                     </p>
                         <p>
                           <img class="alignleft size-full wp-image-482" alt="New Logo, Same Values" src="http://backcountry-deli.com/wp-content/uploads/2013/02/2logos.jpg" width="188" height="252" />
                           <form class = 'image_description' action= '/admin_story' method="POST">
                             <textarea name='image_description1' cols= "60" rows= "1"><%=pages.to_a[0][:image_description1]%></textarea>
-                          <input type='submit'/>
+                          <input type='submit' value='Update'/>
                           <form>
                         </p>
                         <p>
                           <form class = 'body' action= '/admin_story' method="POST">
                             <textarea name='sub_body' cols= "70" rows= "7"><%=pages.to_a[0][:sub_body]%></textarea>
-                          <input type='submit'/>
+                          <input type='submit' value='Update'/>
                           </form>
                         </p>
                 </section> <!-- end article section -->
@@ -90,14 +90,14 @@
             <img class="alignnone size-full wp-image-422" alt="Dave-and-Pete-1999" src="http://backcountry-deli.com/wp-content/uploads/2013/02/Dave-and-Pete-1999.jpg" width="253" height="150" />
             <form class= 'image_description' action= '/admin_story' method = "POST">
               <textarea name="image_description2" cols= "30" rows= '2'><%=pages.to_a[0][:image_description2]%></textarea>
-              <input type='submit'/>
+              <input type='submit' value='Update'/>
             </form>
           </p>
           <p style="font-size: 17px; line-height: 21px;">
             <img class="alignnone  wp-image-402" alt="BackcountryDeli-Skiing" src="http://backcountry-deli.com/wp-content/uploads/2013/02/BackcountryDeli-Skiing-e1364560089235-300x178.jpg" width="253" height="150" />
             <form class= 'image_description' action= '/admin_story' method = "POST">
               <textarea name="image_description3" cols= "30" rows= '1'><%=pages.to_a[0][:image_description3]%></textarea>
-              <input type='submit'/>
+              <input type='submit' value='Update'/>
             </form>
           </p>
           <p>
