@@ -8,7 +8,7 @@
   <head>
   <%= erb :head %>
 
-  <title>Social Love - Backcountry Delicatessen</title>
+  <title><%= pages.to_a[1][:title]%></title>
 
   </head>
   <body class="page page-id-207 page-template-default">
@@ -24,16 +24,16 @@
               <div id="main" class="eightcol first clearfix" role="main">
                 <article id="post-207" class="post-207 page type-page status-publish hentry clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
                   <p>
-                    <form class = 'title' action= '/admin/social_love' method="POST">
-                      <textarea name='social_info[title]' cols= "20" rows= "1">Social Love Title</textarea>
+                    <form class = 'title' action= '/admin_social_love/title' method="POST">
+                      <textarea name='title' cols= "20" rows= "1"><%= pages.to_a[1][:title]%></textarea>
                     </form>
                     <input type='submit'/>
                   </p>
 
                   <header class="article-header">
                       <p>
-                        <form class = 'header' action= '/admin/social_love' method="POST">
-                          <textarea name='social_info[header]' cols= "20" rows= "1">Social Love Header</textarea>
+                        <form class = 'header' action= '/admin_social_love/header' method="POST">
+                          <textarea name='header' cols= "20" rows= "1"><%= pages.to_a[1][:header]%></textarea>
                         </form>
                         <input type='submit'/>
                       </p>
@@ -41,8 +41,8 @@
 
                   <section class="entry-content clearfix" itemprop="articleBody">
                     <p>
-                      <form class = 'description' action= '/admin/social_love' method="POST">
-                        <textarea name="social_info[body]" cols= "100" rows= "5">We primarily communicate our daily specials, community group highlights, and outdoor adventures through our social media channels. We have Facebook and Twitter pages for all our Backcountry Deli stores. Check out all the latest on our social wall below – and please friend/follow us. We&#8217;d friend/follow you anywhere&#8230;</textarea>
+                      <form class = 'description' action= '/admin_social_love/main_body' method="POST">
+                        <textarea name="main_body" cols= "100" rows= "5"><%= pages.to_a[1][:main_body]%></textarea>
                       </form>
                       <input type='submit'/>
                     </p>

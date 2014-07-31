@@ -55,14 +55,13 @@
                     <input type='Submit' />
                     <p>
                     <form class = 'unordered list' action= '/admin/franchise_info' method="POST">
-                      <textarea name="franchise_info[unordered_list]" cols="100" rows="10">
-                        <%list_items.each do %>
-                          <li><%=list_item%></li>
-                        <%end%>
-                     </textarea>
+                      <%pages.to_a[2][:list_elements].split('/').each do |element|%>
+                        <textarea name='list_elements' cols= "20" rows= "1">element</textarea>
+                      <%end%>
                     </form>
-                  </p>
                     <input type='Submit' />
+                  </p>
+
                   </p>
                   <p>
                     <form class = 'inquiry_line' action= '/admin/franchise_info' method="POST">

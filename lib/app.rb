@@ -52,7 +52,7 @@ class BackCountry < Sinatra::Base
   end
 
   get '/story' do
-    erb :home_our_story, locals: {pages: pages.connection[:page]} 
+    erb :home_our_story, locals: {pages: pages.connection[:page]}
   end
 
   get '/admin_story' do
@@ -64,21 +64,27 @@ class BackCountry < Sinatra::Base
   end
 
   post '/admin_story/:attribute' do |attribute|
-    pages.update(30, attribute, params[attribute])
+    pages.update(31, attribute, params[attribute])
     redirect '/admin_story'
   end
 
   get '/social' do
-    erb :home_social_love
+    erb :home_social_love, locals: {pages: pages.connection[:page]}
   end
 
   get '/admin_social' do
     if admin?
-      erb :admin_social_love
+      erb :admin_social_love, locals: {pages: pages.connection[:page]}
     else
       redirect '/admin'
     end
   end
+
+  post '/admin_social/:attribute' do |attribute|
+    pages.update(32, attribute, params[attribute])
+    redirect '/admin_social'
+  end
+
 
   get '/franchise_info' do
     erb :home_franchise_info
@@ -152,7 +158,7 @@ class BackCountry < Sinatra::Base
 
   get '/admin_locations/:location' do |location|
     # full_location = LocationStore.get_location(location)
-    erb :admin_location #, locals: {location: full_location}
+    erb :admin_location #, locals: {}
   end
 
   get '/order_online_denver' do

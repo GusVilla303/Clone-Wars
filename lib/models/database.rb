@@ -37,6 +37,9 @@ class Database
                                 :image_description1 => "Backcountry Delicatessen was originally called Backcountry Provisions.",
                                 :image_description2 => "Dave and Pete opening the Steamboat Springs Deli - circa 1999",
                                 :image_description3 => "The boys today kicking back")
+      @connection[:page].insert(:header             => "Social Love",
+                                :title              => "Social Love - Backcountry Deli",
+                                :main_body          => "We primarily communicate our daily specials, community group highlights, and outdoor adventures through our social media channels. We have Facebook and Twitter pages for all our Backcountry Deli stores. Check out all the latest on our social wall below – and please friend/follow us. We'd friend/follow you anywhere")
     end
   end
 

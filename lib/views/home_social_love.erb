@@ -8,7 +8,7 @@
 	<head>
 	<%= erb :head %>
 
-	<title>Social Love - Backcountry Delicatessen</title>
+	<title><%= pages.to_a[0][:title]%></title>
 
 	</head>
 	<body class="page page-id-207 page-template-default">
@@ -24,11 +24,11 @@
 					    <div id="main" class="eightcol first clearfix" role="main">
 								<article id="post-207" class="post-207 page type-page status-publish hentry clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
 									<header class="article-header">
-								    	<h1 class="page-title" itemprop="headline">Social Love</h1>
+								    	<h1 class="page-title" itemprop="headline"><%= pages.to_a[0][:header]%></h1>
 							    </header> <!-- end article header -->
 
 							    <section class="entry-content clearfix" itemprop="articleBody">
-								    <p class= "main_body">We primarily communicate our daily specials, community group highlights, and outdoor adventures through our social media channels. We have Facebook and Twitter pages for all our Backcountry Deli stores. Check out all the latest on our social wall below – and please friend/follow us. We&#8217;d friend/follow you anywhere&#8230;</p>
+								    <p class= "main_body"><%= pages.to_a[0][:main_body]%></p>
 										<p>Facebook –
 											<a href="http://www.facebook.com/backcountrydeli" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.facebook.com']);" target="_blank">Backcountry Deli (mama site)</a> |
 											<a href="https://www.facebook.com/bcdlodo" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.facebook.com']);" target="_blank">Denver &#8211; LoDo</a> |

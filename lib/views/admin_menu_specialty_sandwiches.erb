@@ -20,13 +20,20 @@
       <div id="content">
         <div id="foodmenu_wrapper">
           <div class="foodmenu-left">
-          <h1>Specialty Sandwiches</h1>
+          <form action='/admin_menu_specitalty_sandwiches' method='POST'>
+            <h1><%= pages.to_a[1][:header]%></h1>
+            <input type= 'submit' value='Update'/>
+          </form>
             <div class="foodcol-1">
+              #join menu and menu type tables
+              ##menu_type.join(:menu, :id => :menu_id)
               <%menu.type.each do |type|%>
                 <form action='/admin_menu/<%= menu.type%>' method='POST'>
                   <input type='text' name= 'menu[type]' value="<%= menu.type%>"/><br/>
+                  <input type= 'submit' value='Update'/>
                 </form>
                 <input type= 'submit' value='Update'/>
+                # menu_item.join(:menu_type, id => menu_tpye.id)
                 <% type.items.each do |item| %>
                   <div class="food-title-area">
                     <form action='/admin_menu/<%= item.id %>' method='POST'>
