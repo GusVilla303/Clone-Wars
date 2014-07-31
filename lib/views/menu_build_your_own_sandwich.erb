@@ -8,7 +8,7 @@
 	<head>
 		<%= erb :head %>
 
-		<title>Build Your Own Sandwich - Backcountry Delicatessen</title>
+		<title><%= menu[:title] %></title>
 
 	</head>
 	<body class="page page-id-49 page-child parent-pageid-9 page-template page-template-page-menu-php">
@@ -20,43 +20,24 @@
 			<div id="content">
 				<div id="foodmenu_wrapper">
 					<div class="foodmenu-left">
-						<h1>Build Your Own Sandwich</h1>
+						<h1><%= menu[:title] %></h1>
 					  <div class="foodcol-1">
 							<span class="food-type"></span>
 							<div class="food-title-area">
 								<p>
-									<span class="food-type">Bread:</span><span class="toasted"></span><span class="food-price"></span><br />
-									French Baguette<br />
-									Whole Wheat<br />
-									Sourdough<br />
-									Light Rye<br />
-									Wrap<br />
-									Whole Grain Gluten Free | + .50
+									<span class="food-type"><%= menu_headings[0][:title] %></span><span class="toasted"></span><span class="food-price"></span><br />
+									<% items.find_all { |i| i[:menu_heading_id] == menu_headings[0][:id] }.each do |item| %>
+									<%= item[:title] %><br/>
+									<% end %>
 								</p>
 							</div><!-- food-title-area -->
 							<div class="food-title-area">
 								<p>
-									<span class="food-type">Meat: (Choose one)</span><span class="toasted"></span>
+									<span class="food-type"><%= menu_headings[1][:title] %><</span><span class="toasted"></span>
 									<span class="food-price"></span><br />
-									Roasted Turkey<br />
-									Roast Beef<br />
-									Smoked Ham<br />
-									Corned Beef<br />
-									Pulled Pork<br />
-									Sliced Chicken Breast<br />
-									Prosciutto<br />
-									Genoa Salami<br />
-									Sopressata<br />
-									Mortadella<br />
-									Capocollo<br />
-									German Bologna<br />
-									Braunschweiger<br />
-									Tuna Salad<br />
-									Curry Chicken Salad<br />
-									Smoked Salmon | + 1.00<br />
-									Pastrami | + 1.00<br />
-									Bacon | + 1.00<br />
-									<strong>Extra meat | + 2.50</strong>
+									<% items.find_all { |i| i[:menu_heading_id] == menu_headings[1][:id] }.each do |item| %>
+									<%= item[:title] %><br/>
+									<% end %>
 								</div>
 							</div><!-- food-title-area -->
 
@@ -64,73 +45,30 @@
 							<span class="food-type"></span></p>
 							<div class="food-title-area">
 								<p>
-									<span class="food-type">Cheese: (Choose one)</span>
+									<span class="food-type"><%= menu_headings[2][:title] %></span>
 									<span class="toasted"></span><span class="food-price"></span><br />
-									Swiss<br />
-									Provolone<br />
-									Cheddar<br />
-									Muenster<br />
-									French Brie<br />
-									Smoked Gouda<br />
-									Fontina<br />
-									Chevre<br />
-									Fresh Mozzarella<br />
-									Asiago<br />
-									Pepper Jack<br />
-									Crumbled Blue<br />
-									Feta<br />
-									Dill Havarti<br />
-									Jarlsburg<br />
-									American<br />
-									Cream Cheese<br />
-									<strong>Extra cheese | + 1.00</strong>
+									<% items.find_all { |i| i[:menu_heading_id] == menu_headings[2][:id] }.each do |item| %>
+									<%= item[:title] %><br/>
+									<% end %>
 								</div>
 							</div> <!-- food-title-area -->
 						<div class="foodcol-3">
 							<span class="food-type"></span></p>
 								<div class="food-title-area">
 									<p>
-										<span class="food-type">Veggies: (All you want)</span>
+										<span class="food-type"><%= menu_headings[3][:title] %></span>
 										<span class="toasted"></span><span class="food-price"></span><br />
-										Romaine Lettuce<br />
-										Field Greens<br />
-										Tomato<br />
-										Red Onion<br />
-										Cucumber<br />
-										Carrot<br />
-										Sprouts<br />
-										Pickles<br />
-										Pepperoncini<br />
-										Kalamata Olives<br />
-										Giardiniera<br />
-										Coleslaw<br />
-										Hot Cherry Peppers<br />
-										Avocado | + 1.00<br />
-										Artichoke Hearts | + 1.00<br />
-										Grilled Eggplant | + 1.00<br />
-										Roasted Red Peppers | + .50<br />
-										Oven Roasted Tomatoes | + .50
+										<% items.find_all { |i| i[:menu_heading_id] == menu_headings[3][:id] }.each do |item| %>
+										<%= item[:title] %><br/>
+										<% end %>
 									</div>
 								<div class="food-title-area">
 									<p>
-										<span class="food-type">Spreads:</span>
+										<span class="food-type"><%= menu_headings[4][:title] %></span></span>
 										<span class="toasted"></span><span class="food-price"></span><br />
-										Mayo<br />
-										Chipotle Mayo<br />
-										Horseradish Mayo<br />
-										Garlic Mayo<br />
-										Pesto Mayo<br />
-										Dijon Mustard<br />
-										Deli Brown Mustard<br />
-										Honey Dijon Mustard<br />
-										Yellow Mustard<br />
-										House Caesar Dressing<br />
-										House Russian Dressing<br />
-										House Vinaigrette<br />
-										House Balsamic Vinaigrette<br />
-										House Buttermilk Ranch<br />
-										Basil Pesto | + .50<br />
-										Cranberry Chutney | + .50
+										<% items.find_all { |i| i[:menu_heading_id] == menu_headings[4][:id] }.each do |item| %>
+										<%= item[:title] %><br/>
+										<% end %>
 									</div>
 								</div> <!-- food-title-area -->
 							<div class="clearfix">
