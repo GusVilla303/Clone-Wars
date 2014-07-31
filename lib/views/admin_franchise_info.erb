@@ -24,58 +24,52 @@
           <div id="main" class="eightcol first clearfix" role="main">
             <article id="post-7" class="post-7 page type-page status-publish hentry clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
               <p>
-                <form class = 'title' action= '/admin/franchise_info' method="POST">
-                  <textarea name='[title]' cols= "20" rows= "1">Franchise Info Title</textarea>
+                <form class = 'title' action= '/admin_franchise_info/title' method="POST">
+                  <textarea name='title' cols= "20" rows= "1"><%= pages.to_a[2][:title] %></textarea>
+                  <input type='Submit' value='Update'/>
                 </form>
-                <input type='Submit' />
               </p>
                 <header class="article-header">
                     <h1 class="page-title" itemprop="headline">
                       <p>
-                      <form class = 'header' action= '/admin/frachise_info' method="POST">
-                        <textarea name='franchise_info[header]' cols= "20" rows= "1">Franchise Info Header</textarea>
+                      <form class = 'header' action= '/admin_frachise_info/header' method="POST">
+                        <textarea name='header' cols= "20" rows= "1"><%= pages.to_a[2][:header] %></textarea>
+                        <input type='Submit' value='Update'/>
                       </form>
                     </h1>
-                    <input type='Submit' />
                   </p>
 
                 </header> <!-- end article header -->
 
                 <section class="entry-content clearfix" itemprop="articleBody">
                   <p>
-                    <form class = 'description' action= '/admin/franchise_info' method="POST">
-                      <textarea name="franchise_info[description]" cols= "100" rows= "5">Backcountry Delicatessen’s plan of growth is to choose select locations that connect with our unique brand and philosophy. Think your community could be a good fit for a Backcountry Delicatessen? Well, we’re interested in talking with you.</textarea>
+                    <form class = 'description' action= '/admin_franchise_info/main_body' method="POST">
+                      <textarea name="main_body" cols= "100" rows= "5"><%= pages.to_a[2][:main_body] %></textarea>
+                      <input type='Submit' value='Update'/>
                     </form>
-                    <input type='Submit' />
                   </p>
 
-                    <form class = 'sub_description' action= '/admin/franchise_info' method="POST">
-                      <textarea name="franchise_info[sub_description]" cols= "100" rows= "2">Before we do, here’s a few of our company&#8217;s primary values:</textarea>
+                    <form class = 'sub_description' action= '/admin_franchise_info/sub_body' method="POST">
+                      <textarea name="sub_body" cols= "100" rows= "2"><%= pages.to_a[2][:sub_body] %></textarea>
+                      <input type='Submit' value='Update'/>
                     </form>
-                    <input type='Submit' />
                     <p>
-                    <form class = 'unordered list' action= '/admin/franchise_info' method="POST">
-                      <%pages.to_a[2][:list_elements].split('/').each do |element|%>
-                        <textarea name='list_elements' cols= "20" rows= "1">element</textarea>
-                      <%end%>
-                    </form>
-                    <input type='Submit' />
                   </p>
 
                   </p>
                   <p>
-                    <form class = 'inquiry_line' action= '/admin/franchise_info' method="POST">
-                      <textarea name="franchise_info[inquiry_line]" cols="100" rows="2">Contact us by clicking the button in the right sidebar to fill out a Franchise Inquiry form.</textarea>
+                    <form class = 'inquiry_line' action= '/admin_franchise_info/image_description1' method="POST">
+                      <textarea name="image_description1" cols="100" rows="2"><%= pages.to_a[2][:image_description1] %></textarea>
+                      <input type='Submit' value='Update' />
                     </form>
-                    <input type='Submit' />
+                    <form class = 'inquiry_line' action= '/admin_franchise_info/image_description2' method="POST">
+                      <textarea name="image_description1" cols="100" rows="2"><%= pages.to_a[2][:image_description2] %></textarea>
+                      <input type='Submit' value='Update' />
+                    </form>
                   </P>
                     <h3><strong>
                     <p>
-                    <form class='start_convo' action='/admin/franchise_info' method="POST">
-                      <textarea name="franchise_info[start_convo]" cols="100" rows="2">Let’s start the conversation.</textarea>
-                    </form>
                     <h3></strong>
-                    <input type='Submit' />
                   </p>
 
                 </section> <!-- end article section -->
@@ -111,7 +105,12 @@
                     </a>
                   </p>
                   <p> </p>
-                  <p style="font-size: 17px; line-height: 21px;"><img class="alignnone size-full wp-image-437" alt="backcountry-awards" src="http://backcountry-deli.com/wp-content/uploads/2013/02/backcountry-awards.jpg" width="253" height="150" />Collecting another annual haul at the Best of the Boat awards - Steamboat Springs</p>
+                  <p style="font-size: 17px; line-height: 21px;"><img class="alignnone size-full wp-image-437" alt="backcountry-awards" src="http://backcountry-deli.com/wp-content/uploads/2013/02/backcountry-awards.jpg" width="253" height="150" />
+                    <form class='start_convo' action='/admin_franchise_info/image_description3' method="POST">
+                      <textarea name="image_description2" cols="100" rows="2"><%= pages.to_a[2][:image_description3] %></textarea>
+                      <input type='Submit' value='Update' />
+                    </form>
+                  </p>
                 </div>
               </div>
             </div>

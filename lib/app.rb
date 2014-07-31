@@ -87,15 +87,20 @@ class BackCountry < Sinatra::Base
 
 
   get '/franchise_info' do
-    erb :home_franchise_info
+    erb :home_franchise_info, locals: {pages: pages.connection[:page]}
   end
 
   get '/admin_franchise_info' do
     if admin?
-      erb :admin_franchise_info
+      erb :admin_franchise_info, locals: {pages: pages.connection[:page]}
     else
       redirect '/admin'
     end
+  end
+
+  post '/admin_franchise_info/:attribute' do |attribute|
+    pages.update(35, attribute, params[attribute])
+    redirect '/admin_franchise_info'
   end
 
   get '/contact_us' do

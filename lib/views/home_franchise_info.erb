@@ -8,7 +8,7 @@
 	<head>
 		<%= erb :head %>
 
-		<title>Franchise Info - Backcountry Delicatessen</title>
+		<title><%= pages.to_a[2][:title] %></title>
 
 	</head>
 	<body class="page page-id-7 page-template-default">
@@ -24,30 +24,22 @@
 					<div id="main" class="eightcol first clearfix" role="main">
 						<article id="post-7" class="post-7 page type-page status-publish hentry clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
 								<header class="article-header">
-								    <h1 class="page-title" itemprop="headline">Franchise Info</h1>
+								    <h1 class="page-title" itemprop="headline"><%= pages.to_a[2][:header] %></h1>
 							   </header> <!-- end article header -->
 
 							  <section class="entry-content clearfix" itemprop="articleBody">
 									<div class = "main_body"
-								    <p>Backcountry Delicatessen’s plan of growth is to choose select locations that connect with our unique brand and philosophy. Think your community could be a good fit for a Backcountry Delicatessen? Well, we’re interested in talking with you.</p>
-										<p>Before we do, here’s a few of our company&#8217;s primary values:</p>
+								    <p>
+											<%= pages.to_a[2][:main_body] %>
+										</p>
 									</div>
 										<ul>
-											<li>Providing a fresh concept with unique and great tasting fare</li>
-											<li>Sourcing the highest quality/ freshest ingredients</li>
-											<li>Supporting franchisees around the clock</li>
-											<li>Promoting an active and healthy lifestyle-culture</li>
-											<li>Bringing the mountain lifestyle to your neighborhood</li>
-											<li>Creating strong community presence-involvement-commitment</li>
-											<li>Bringing value to community business infrastructure</li>
-											<li>Being passionate about who and what we are</li>
-											<li>Bringing strong brand loyalty/following</li>
-											<li>Rewarding cost structure</li>
+											<%= pages.to_a[2][:sub_body] %>
 										</ul>
 										<div class = 'sub_body'>
-										<p>Contact us by clicking the button in the right sidebar to fill out a Franchise Inquiry form.</p>
+										<p><%= pages.to_a[2][:image_description1] %></p>
 										<div class = 'tagline>'
-											<p><strong>Let’s start the conversation.</strong></p>
+											<p><strong><%= pages.to_a[2][:image_description2] %></strong></p>
 										</div>
 								</section> <!-- end article section -->
 
@@ -82,7 +74,7 @@
 										</a>
 									</p>
 									<p> </p>
-									<p style="font-size: 17px; line-height: 21px;"><img class="alignnone size-full wp-image-437" alt="backcountry-awards" src="http://backcountry-deli.com/wp-content/uploads/2013/02/backcountry-awards.jpg" width="253" height="150" />Collecting another annual haul at the Best of the Boat awards - Steamboat Springs</p>
+									<p style="font-size: 17px; line-height: 21px;"><img class="alignnone size-full wp-image-437" alt="backcountry-awards" src="http://backcountry-deli.com/wp-content/uploads/2013/02/backcountry-awards.jpg" width="253" height="150" /><%= pages.to_a[2][:image_description3] %></p>
 								</div>
 							</div>
 						</div>
