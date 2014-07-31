@@ -867,182 +867,182 @@ class Database
     :description      => "we proudly serve our custom, Colorado roasted Backcountry Bold coffee"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "16",
     :title            => "Breakfast Sandwich Tray",
     :price            => "30.00",
     :description      => "2 bacon, 2 ham & 2 veggie hot egg sandwiches",
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "16",
     :title            => "Classic Sandwich Tray",
     :price            => "62.95",
     :description      => "classic deli sandwiches; includes turkey, ham, roast beef, corned beef, prepared with choice cheeses, lettuce & tomato"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "16",
     :title            => "Custom Sandwich Tray",
     :price            => "72.95",
     :description      => "create your own custom tray from our specialty sandwich menu; choose 6 sandwiches"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "16",
     :title            => "Signature Sandwich Tray",
     :price            => "69.95",
     :description      => "make it easy, let us choose our most popular choices"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "17",
     :title            => "Panzanella",
     :price            => "45.00",
     :description      => "artichoke hearts, grape tomatoes, capers, chevre, fresh croutons, served on a bed of field greens with our house balsamic vinaigrette."
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "17",
     :title            => "Greek Salad",
     :price            => "49.00",
     :description      => "cucumber, pepperoncini, kalamata olives, red onion, grape tomatoes, feta, served on a bed of field greens with our house balsamic vinaigrette."
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "17",
     :title            => "Chicken Caesar",
     :price            => "49.00",
     :description      => "sliced chicken breast served on a bed of crisp romaine lettuce, fresh croutons & shaved asiago cheese with our house caesar dressing"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "17",
     :title            => "Cobb Salad",
     :price            => "53.00",
     :description      => "fresh cubed chicken breast, bacon, avocado, chopped hard-boiled egg, grape tomatoes, red onion, crumbled blue cheese, served on a bed of field greens with our house buttermilk ranch dressing"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "17",
     :title            => "Garden Salad",
     :price            => "39.00",
     :description      => "cucumbers, carrots, grape tomatoes, and red onion served over a bed of field greens, served with a side of balsamic and ranch dressing"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "18",
     :title            => "Soup & Salad Box Lunch",
     :price            => "10.95",
     :description      => "cup of fresh made soup, choice of half salad & fresh baked dessert"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "18",
     :title            => "Soup & Sandwich Box Lunch",
     :price            => "10.95",
     :description      => "cup of fresh made soup, choice of half sandwich, chips & fresh baked dessert"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "18",
     :title            => "Salad Box Lunch",
     :price            => "10.95",
     :description      => "your choice of greek, cobb, chicken caesar, panzanella, or garden salad; includes french baguette & fresh baked dessert or apple"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "18",
     :title            => "Day Hiker Box Lunch",
     :price            => "10.25",
     :description      => "a classic deli sandwich on french bread, choice of ham, turkey, roast beef, or veggie, with lettuce, tomato, onion, cheddar cheese, mustard & mayonnaise on side; includes pickle spear, chips, & fresh baked dessert"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "18",
     :title            => "Backpacker Box Lunch",
     :price            => "10.95",
     :description      => "a sandwich of your choice from our specialty sandwich menu; includes pickle spear, chips & fresh baked dessert"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "19",
     :title            => "Deli Salads - Small",
     :price            => "2.50",
     :description      => "potato salad & coleslaw made fresh daily, half-pint"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "19",
     :title            => "Deli Salads - Large",
-    :price            => "4.00",
+    :price            => "5.00",
     :description      => "potato salad & coleslaw made fresh daily, pint"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "19",
     :title            => "Potato Chips",
     :price            => "1.30",
     :description      => "sea salt, salt & vinegar, barbeque, jalapeno, Sun Chips "
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "19",
     :title            => "Desserts",
     :price            => "1.75 each",
     :description      => "Freshly baked chocolate chip cookies, oatmeal raisin cookies, and fudge brownies"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "20",
     :title            => "Fountain Drinks",
     :price            => "2.50",
     :description      => "Pepsi, Diet Pepsi, Dr Pepper, Diet Dr Pepper, Mountain Dew, Diet Mountain Dew"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "20",
     :title            => "Izze",
     :price            => "2.50",
     :description      => "Blackberry, Grapefruit, Pomegranate, Clementine"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "20",
     :title            => "San Pellegrino",
     :price            => "2.50",
     :description      => "Limonata, Aranciata, Blood Orange, Sparkling (500 ml + .50)"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "20",
     :title            => "Arizona Iced Tea",
     :price            => "3.00",
     :description      => "24 oz"
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "20",
     :title            => "Bottled Water",
     :price            => "2.00",
     :description      => ""
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "20",
     :title            => "Fresh Brewed Iced Tea",
     :price            => "1.50",
     :description      => ""
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "20",
     :title            => "100 oz Iced Tea Carrier",
     :price            => "15.00",
     :description      => ""
    )
    @connection[:items].insert(
-    :menu_id          => "4",
+    :menu_id          => "5",
     :menu_heading_id  => "20",
     :title            => "100 oz Coffee Carrier",
     :price            => "15.00",

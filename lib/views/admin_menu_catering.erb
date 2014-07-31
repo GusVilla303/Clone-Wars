@@ -8,7 +8,7 @@
   <head>
     <%= erb :head %>
 
-    <title>Catering - Backcountry Delicatessen</title>
+    <title><%= menu[:title] %></title>
 
   </head>
 
@@ -21,31 +21,28 @@
       <div id="content">
         <div id="foodmenu_wrapper">
           <div class="foodmenu-left">
-            <h1>Catering Menu</h1>
+          <form action='/admin_menu/<%= menu[:id] %>' method='POST'>
+            <h1><input type = 'text' name='title' value ='<%= menu[:title]%>'/></h1>
+            <input type= 'submit' value='Update'/>
+          </form>
             <div class="foodcol-1">
-              <%menu.type.each do |type|%>
-                <form action='/admin_menu/<%= menu.type%>' method='POST'>
-                  <input type='text' name= 'menu[type]' value="<%= menu.type%>"/><br/>
-                </form>
-                <input type= 'submit' value='Update'/>
-                <% type.items.each do |item| %>
+              <%menu_headings.each do |heading|%>
+              <br/><br/><form action='/admin_menu_heading/<%= heading[:id]%>/<%= menu[:id] %>' method='POST'>
+                <input type='text' name= 'title' value="<%= heading[:title]%>"/>
+                <input type= 'submit' value='Update'>
+              </form>
+                <% items.find_all { |i| i[:menu_heading_id] == heading[:id] }.each do |item| %>
                   <div class="food-title-area">
-                    <form action='/admin_menu/<%= item.id %>' method='POST'>
-                      <input type='text' name="item[title]" value="<%= item.title %>"/><br/>
-                      <input type="text" class="food-price"><%=item.price%>/><br/>
-                      <textarea name='item[description]' cols='40' rows='2'><%=item.description%><textarea/>
+                    <form action='/admin_menu/title/<%= item[:id] %>/<%= menu[:id] %>' method='POST'>
+                      <input type='text' name="title" value="<%= item[:title] %>"/><br/>
                       <input type='submit' value='Update'/>
                     </form>
-                  </div>
-                <% end %>
-
-                <% type.items.each do |item| %>
-                  <div class="food-title-area">
-                    <form action='/admin_menu/<%= item.id %>' method='POST'>
-                      <h3>Create a new idea </h3>
-                      <input type='text' name="item[title]" value="<%= item.title %>"/><br/>
-                      <input type="text" class="food-price"><%=item.price%>/><br/>
-                      <textarea name='item[description]' cols='40' rows='2'><%=item.description%><textarea/>
+                    <form action='/admin_menu/price/<%= item[:id] %>/<%= menu[:id] %>' method='POST'>
+                      <input type='text' name="price" value="<%= item[:price] %>"/><br/>
+                      <input type='submit' value='Update'/>
+                    </form>
+                    <form action='/admin_menu/description/<%= item[:id] %>/<%= menu[:id] %>' method='POST'>
+                      <input type='text' name="description" value="<%= item[:description] %>"/><br/>
                       <input type='submit' value='Update'/>
                     </form>
                   </div>

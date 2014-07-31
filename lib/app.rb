@@ -128,7 +128,7 @@ class BackCountry < Sinatra::Base
   end
 
   get '/catering' do
-    erb :menu_catering
+    erb :menu_catering, locals: {menu: pages.connection[:menus].to_a[4], items: pages.connection[:items].where(:menu_id => '5').to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  '5').to_a}
   end
 
   get '/other_food' do
@@ -162,6 +162,14 @@ class BackCountry < Sinatra::Base
   get '/admin_other_food' do
     if admin?
       erb :admin_menu_other_food, locals: {menu: pages.connection[:menus].to_a[3], items: pages.connection[:items].where(:menu_id => '4').to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  '4').to_a}
+    else
+      redirect '/admin'
+    end
+  end
+
+  get '/admin_catering' do
+    if admin?
+      erb :admin_menu_catering, locals: {menu: pages.connection[:menus].to_a[4], items: pages.connection[:items].where(:menu_id => '5').to_a, menu_headings: pages.connection[:menu_headings].where(:menu_id =>  '5').to_a}
     else
       redirect '/admin'
     end

@@ -28,10 +28,10 @@
              <div class="foodcol-1">
                 <% menu_headings.each do |heading| %>
                 <br/><br/>
-                  <h2><form action='/admin_menu_heading/<%= heading[:id] %>/<%= menu[:id]%>' method='POST'>
+                  <form action='/admin_menu_heading/<%= heading[:id] %>/<%= menu[:id]%>' method='POST'>
                     <input type='text' name= 'title' value="<%= heading[:title]%>"/><br/>
                     <input type='submit' value='Update'>
-                  </form></h2>
+                  </form>
                     <% items.find_all { |i| i[:menu_heading_id] == heading[:id] }.each do |item| %>
                     <div class="food-title-area">
                       <form action='/admin_menu/title/<%= item[:id] %>/<%= menu[:id] %>' method='POST'>

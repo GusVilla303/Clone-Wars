@@ -21,12 +21,12 @@
         <div id="foodmenu_wrapper">
           <div class="foodmenu-left">
           <form action='/admin_menu/<%= menu[:id] %>' method='POST'>
-            <h1><input type = 'text' name='title' value ='<%= menu[:title]%>'/></h1>
-            <input type= 'submit' value='Update'/>
+            <h1><input type = 'text' name='title' value ='<%= menu[:title]%>'/>
+            <input type= 'submit' value='Update'/></h1>
           </form>
             <div class="foodcol-1">
               <% menu_headings.each do |heading|%>
-                <form action='/admin_menu_heading/<%= heading[:title]%>' method='POST'>
+                <br/><br/><form action='/admin_menu_heading/<%= heading[:title]%>' method='POST'>
                   <input type='text' name= 'title' value="<%= heading[:title]%>"/><br/>
                   <input type= 'submit' value='Update'/>
                 </form>
