@@ -64,7 +64,7 @@ class BackCountry < Sinatra::Base
   end
 
   post '/admin_story/:attribute' do |attribute|
-    pages.update(31, attribute, params[attribute])
+    pages.update(:page, 31, attribute, params[attribute])
     redirect '/admin_story'
   end
 
@@ -81,7 +81,7 @@ class BackCountry < Sinatra::Base
   end
 
   post '/admin_social/:attribute' do |attribute|
-    pages.update(32, attribute, params[attribute])
+    pages.update(:page, 32, attribute, params[attribute])
     redirect '/admin_social'
   end
 
@@ -99,7 +99,7 @@ class BackCountry < Sinatra::Base
   end
 
   post '/admin_franchise_info/:attribute' do |attribute|
-    pages.update(35, attribute, params[attribute])
+    pages.update(:page, 35, attribute, params[attribute])
     redirect '/admin_franchise_info'
   end
 
@@ -141,29 +141,49 @@ class BackCountry < Sinatra::Base
   end
 
   get '/denver' do
-    erb :location_denver
+    erb :location_denver, locals: {location: pages.connection[:locations].to_a[0]}
   end
 
   get '/fort_collins' do
-    erb :location_fort_collins
+    erb :location_fort_collins, locals: {location: pages.connection[:locations].to_a[1]}
   end
 
   get '/jackson_hole' do
-    erb :location_jackson_hole
+    erb :location_jackson_hole, locals: {location: pages.connection[:locations].to_a[2]}
   end
 
   get '/steamboat_springs' do
-    erb :location_steamboat_springs
+    erb :location_steamboat_springs, locals: {location: pages.connection[:locations].to_a[3]}
   end
 
-  get '/admin/denver' do
-    # full_location = LocationStore.get_location(location)
-    erb :admin_location #, locals: {location: full_location}
+  get '/admin_location_denver' do
+    erb :admin_location, locals: {location: pages.connection[:locations].to_a[0]}
   end
 
-  get '/admin_locations/:location' do |location|
-    # full_location = LocationStore.get_location(location)
-    erb :admin_location #, locals: {}
+  get '/admin_location_fort_collins' do
+    erb :admin_location, locals: {location: pages.connection[:locations].to_a[1]}
+  end
+
+  get '/admin_location_jackson_hole' do
+    erb :admin_location, locals: {location: pages.connection[:locations].to_a[2]}
+  end
+
+  get '/admin_location_steamboat_springs' do
+    erb :admin_location, locals: {location: pages.connection[:locations].to_a[3]}
+  end
+
+  post '/admin_location/:id/:attribute' do |id, attribute|
+    pages.update(:locations, id, attribute, params[attribute])
+    case id
+    when '1'
+      redirect '/admin_location_denver'
+    when '2'
+      redirect '/admin_location_fort_collins'
+    when '3'
+      redirect '/admin_location_jackson_hole'
+    else
+      redirect '/admin_location_steamboat_springs'
+    end
   end
 
   get '/order_online_denver' do

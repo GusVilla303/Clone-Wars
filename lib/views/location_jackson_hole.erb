@@ -8,7 +8,7 @@
 	<head>
 		<%= erb :head %>
 
-		<title>Jackson Hole, WY - Backcountry Delicatessen</title>
+		<title><%= location[:title] %></title>
 
 	</head>
 	<body class="page page-id-13 page-child parent-pageid-10 page-template page-template-page-location-php">
@@ -26,11 +26,11 @@
 				<div id="location_content_container">
 					<div id="location_content" class="clearfix">
 						<div class="main-content">
-							<h1>Jackson Hole, WY</h1>
-							<p><strong><em class = "hours">Open Mon &#8211; Sun 7 am &#8211; 5 pm </em>| <em class = "phone_number">307-734-9420</em><br /></strong></p>
-							<p class = "main_body">It’s no coincidence that one of our favorite playgrounds was chosen to be our first expansion. Opened in 2005, Backcountry Delicatessen Jackson Hole is located in the heart of Town Square. BCD Jackson embraces the beauty of the Tetons and Yellowstone National Park with memorabilia and breath-taking photography. In this land of high octane adventure, we’re proud Backcountry has become a favorite go-to for locals and seasonal tourists alike in search of great tasting fuel.</p>
-							<p><strong><em class= 'subheader'>Jackson Hole community involvement:</em></strong><br /><em class = "sub_body">Teton Freedom Riders, Friends of the Pathways, JH Ski Club</em></p>
-							<p><em class = 'address'>Town Square 50 W Deloney Ave, Jackson Hole, WY</em></p>
+							<h1><%= location[:header] %></h1>
+							<p><strong><em class = "hours"><%= location[:hours] %></em><br /></strong></p>
+							<p class = "main_body"><%= location[:main_body] %></p>
+							<p><strong><em class= 'subheader'><%= location[:sub_heading] %></em></strong><br /><em class = "sub_body"><%= location[:sub_body] %></em></p>
+							<p><em class = 'address'><%= location[:address] %></em></p>
 							<p>
 								<iframe src="https://maps.google.com/maps/ms?msa=0&amp;msid=214063297357826036615.0004d98ee0e03672401b8&amp;gl=us&amp;ie=UTF8&amp;t=h&amp;ll=43.482056,-110.76313&amp;spn=0.005449,0.018239&amp;z=16&amp;iwloc=0004d98ee4da6e28bc050&amp;output=embed" height="350" width="850" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><br />
 								<small>View <a style="color: #0000ff; text-align: left;" href="https://maps.google.com/maps/ms?msa=0&amp;msid=214063297357826036615.0004d98ee0e03672401b8&amp;gl=us&amp;ie=UTF8&amp;t=h&amp;ll=43.482056,-110.76313&amp;spn=0.005449,0.018239&amp;z=16&amp;iwloc=0004d98ee4da6e28bc050&amp;source=embed" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://maps.google.com']);">Backcountry Deli &#8211; Jackson Hole</a> in a larger map</small>

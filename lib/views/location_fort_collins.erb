@@ -8,7 +8,7 @@
 	<head>
 		<%= erb :head %>
 
-		<title>Fort Collins, CO - Backcountry Delicatessen</title>
+		<title><%= location[:title] %></title>
 
 	</head>
 	<body class="page page-id-15 page-child parent-pageid-10 page-template page-template-page-location-php">
@@ -27,11 +27,11 @@
 				<div id="location_content_container">
 					<div id="location_content" class="clearfix">
 						<div class="main-content">
-							<h1>Fort Collins, CO</h1>
-								<p><strong><em class = "hours">Open Mon &#8211; Sun 7 am &#8211; 5 pm</em> | <emclass = "phone_number">970-482-6913</em></strong></p>
-								<p class = "main_body">Our first front range location and what a lively one it is. Since 2007 Backcountry Delicatessen Fort Collins has enjoyed being a part of and catering to a local mix of active lifestyles and hungry appetites. BCD Fort Collins is located in the heart of the Historic Old Town District, and boasts a recently redesigned and inviting interior. Stop in and see what’s cooking, both behind the counter and with bikers, hikers, skiers, and adventurers of every kind.</p>
-								<p><strong><em class= "sub_header">Fort Collins community involvement:</em></strong><br /><em class= "sub_body">Ciclismo Youth Foundation, FC Bikes, CSU Cycling team, FC Bike Library, First City Cycling team, Overland Mountain Bike Club</em></p>
-								<p><em class= "address">Old Town 140 N College Ave Fort Collins, CO 80524</em></p>
+							<h1><%= location[:header] %></h1>
+								<p><strong><em class = "hours"><%= location[:hours] %></em></strong></p>
+								<p class = "main_body"><%= location[:main_body] %></p>
+								<p><strong><em class= "sub_header"><%= location[:sub_heading] %></em></strong><br /><em class= "sub_body"><%= location[:sub_body] %></em></em></p>
+								<p><em class= "address"><%= location[:address] %></em></p>
 								<p>
 									<iframe src="https://maps.google.com/maps/ms?msa=0&amp;msid=214063297357826036615.0004d98d1296df8921ea9&amp;gl=us&amp;ie=UTF8&amp;t=h&amp;ll=40.58879,-105.076815&amp;spn=0.002852,0.00912&amp;z=17&amp;iwloc=0004d98d162c03073115b&amp;output=embed" height="350" width="850" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><br />
 									<small>View <a style="color: #0000ff; text-align: left;" href="https://maps.google.com/maps/ms?msa=0&amp;msid=214063297357826036615.0004d98d1296df8921ea9&amp;gl=us&amp;ie=UTF8&amp;t=h&amp;ll=40.58879,-105.076815&amp;spn=0.002852,0.00912&amp;z=17&amp;iwloc=0004d98d162c03073115b&amp;source=embed" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://maps.google.com']);">Backcountry Deli &#8211; Fort Collins</a> in a larger map</small>

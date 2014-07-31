@@ -8,7 +8,7 @@
 	<head>
 		<%= erb :head %>
 
-		<title>Denver, CO - Backcountry Delicatessen</title>
+		<title><%= location[:title] %></title>
 
 	</head>
 
@@ -27,19 +27,19 @@
 				<div id="location_content_container">
 					<div id="location_content" class="clearfix">
 						<div class="main-content">
-							<h1>Denver, CO</h1>
+							<h1><%= location[:header] %></h1>
 							<p>
-								<strong><em class = 'hours'>Open Mon &#8211; Fri 7 am &#8211; 6 pm, Sat &#8211; Sun 8 am &#8211; 6 pm </em>| <em class = 'phone_number'>303-534-7900</em><br /></strong>
+								<strong><em class = 'hours'><%= location[:hours] %> </em><br /></strong>
 							</p>
-							<p class= "main_body">Even the most daring adventurers need a little civilization. Established in 2010, Backcountry Delicatessen Denver combines a little mountain spirit with the upbeat energy of “LoDo” (on the 16th Street pedestrian mall just four blocks from Coors Field). So make our Denver Deli your choice before or after all your adventures in downtown Denver. BCD Denver is owned and operated by Dave Mischell, a civilized adventurer if we ever saw one.</p>
+							<p class= "main_body"><%= location[:main_body] %></p>
 							<p>
-								<strong><em class = "sub_heading">Denver community involvement</em><br /></strong>
+								<strong><em class = "sub_heading"><%= location[:sub_heading] %></em><br /></strong>
 								<div class="sub_body">
-									BCD Denver is a member of the Downtown Denver Partnership and also sponsors several charities including the Hitachi Consulting Tour de Cure Cycling Team benefiting the American Diabetes Association. Owner-Operator Dave Mischell is on the Board of Directors for LoDo District Inc. and Co-Chair of its Economic &amp; Community Development Committee.
+									<%= location[:sub_body] %>
 								</div>
 							</p>
 							<p>
-								<em class= "address">LoDo 1617 Wazee St Denver, CO 80202</em>
+								<em class= "address"><%= location[:address] %></em>
 							</p>
 							<p>
 								<iframe src="https://maps.google.com/maps/ms?msa=0&amp;msid=214063297357826036615.0004d98bf29dd8dcfac77&amp;gl=us&amp;ie=UTF8&amp;t=h&amp;ll=39.752543,-104.99976&amp;spn=0.002887,0.00912&amp;z=17&amp;iwloc=0004d98bfe1ad0cd82a04&amp;output=embed" height="350" width="850" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><br />
